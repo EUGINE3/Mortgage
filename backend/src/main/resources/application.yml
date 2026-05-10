@@ -21,6 +21,7 @@ spring:
     producer:
       acks: all
       retries: 3
+    enabled: ${KAFKA_ENABLED:true}
 
   flyway:
     enabled: true

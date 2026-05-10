@@ -3,47 +3,53 @@ spring:
     name: mortgage-service
 
   datasource:
-    url: jdbc:postgresql://postgres:5432/mortgage
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:postgres}
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:h2:mem:mortgagedb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
 
   jpa:
     hibernate:
-      ddl-auto: validate
-    show-sql: false
+      ddl-auto: create-drop
+    show-sql: true
     properties:
-      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate.dialect: org.hibernate.dialect.H2Dialect
       hibernate.jdbc.batch_size: 10
+      hibernate.format_sql: true
 
   kafka:
-    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
+    bootstrap-servers: localhost:9092
     producer:
       acks: all
       retries: 3
-    enabled: ${KAFKA_ENABLED:true}
 
   flyway:
-    enabled: true
-    locations: classpath:db/migration
+    enabled: false
 
   jackson:
     serialization:
       write-dates-as-timestamps: false
 
 server:
-  port: ${SERVER_PORT:8080}
+  port: 8080
 
 logging:
   level:
-    root: INFO
+    root: DEBUG
     com.bank.mortgage: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
   pattern:
     console: "[%d{yyyy-MM-dd HH:mm:ss}] [%thread] %-5level %logger{36} - %msg%n"
 
 app:
   jwt:
-    secret: ${JWT_SECRET:secret-key-for-jwt-token-signing-change-in-production}
+    secret: test-secret-key-for-h2-testing
     expiration-ms: 3600000
 
 springdoc:

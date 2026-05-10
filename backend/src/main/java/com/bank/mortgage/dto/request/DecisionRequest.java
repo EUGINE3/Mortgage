@@ -1,18 +1,18 @@
 package com.bank.mortgage.dto.request;
 
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
 public class DecisionRequest {
 
-    @NotNull
-    private String decisionType;
+    @NotBlank(message = "Status is required (APPROVED or REJECTED)")
+    private String status;
 
-    @Size(max = 1000)
-    private String reason;
+    @NotBlank(message = "Comments are required")
+    @Size(max = 1000, message = "Comments must not exceed 1000 characters")
+    private String comments;
 
-    @NotNull
-    private String decidedBy;
+    private String approverName;
 }
