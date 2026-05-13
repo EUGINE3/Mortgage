@@ -20,7 +20,9 @@ public class Application {
     @Id
     private UUID id;
 
-    private UUID applicantId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "applicant_id", nullable = false)
+    private User applicant;
 
     private String nationalId;
 

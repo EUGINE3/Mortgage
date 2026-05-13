@@ -34,8 +34,8 @@ public class ApplicationController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyRole('APPLICANT', 'CREDIT_OFFICER')")
-    public ApplicationResponse getById(@PathVariable UUID id) {
+    @PreAuthorize("hasAnyRole('APPLICANT', 'C    public ApplicationResponse getById(@PathVariable UUID id) {
+REDIT_OFFICER')")
         return applicationService.getById(id);
     }
 

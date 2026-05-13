@@ -1,19 +1,16 @@
 CREATE TABLE users (
     id UUID PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    first_name VARCHAR(100),
-    last_name VARCHAR(100),
-    national_id VARCHAR(50) UNIQUE NOT NULL,
-    phone_number VARCHAR(20),
-    address TEXT,
-    created_at TIMESTAMP NOT NULL,
-    updated_at TIMESTAMP NOT NULL,
-    version INT DEFAULT 0
+    password VARCHAR(255) NOT NULL,
+    national_id VARCHAR(50) UNIQUE,
+    role VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP NOT NULL
 );
 
 CREATE TABLE applications (
     id UUID PRIMARY KEY,
-    applicant_id UUID,
+    applicant_id UUID NOT NULL,
     national_id VARCHAR(50) NOT NULL,
     status VARCHAR(20) NOT NULL DEFAULT 'PENDING',
     loan_amount NUMERIC(15,2) NOT NULL,
@@ -21,7 +18,8 @@ CREATE TABLE applications (
     income NUMERIC(15,2),
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP NOT NULL,
-    version INT DEFAULT 0
+    version INT DEFAULT 0,
+    FOREIGN KEY (applicant_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE decisions (
@@ -34,7 +32,7 @@ CREATE TABLE decisions (
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP NOT NULL,
     version INT DEFAULT 0,
-    FOREIGN KEY (application_id) REFERENCES applications(id)
+    FOREIGN KEY (application_id) REFERENCES applications(id) ON DELETE CASCADE
 );
 
 CREATE TABLE documents (
@@ -50,5 +48,5 @@ CREATE TABLE documents (
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP NOT NULL,
     version INT DEFAULT 0,
-    FOREIGN KEY (application_id) REFERENCES applications(id)
+    FOREIGN KEY (application_id) REFERENCES applications(id) ON DELETE CASCADE
 );

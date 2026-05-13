@@ -1,6 +1,7 @@
 package com.bank.mortgage.repository;
 
 import com.bank.mortgage.domain.Application;
+import com.bank.mortgage.domain.User;
 import com.bank.mortgage.domain.enums.ApplicationStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,11 +13,11 @@ import java.util.UUID;
 
 public interface ApplicationRepository extends JpaRepository<Application, UUID> {
 
-    List<Application> findByApplicantId(UUID applicantId);
+    List<Application> findByApplicant(User applicant);
+
+    Page<Application> findByApplicant(User applicant, Pageable pageable);
 
     Page<Application> findByStatus(ApplicationStatus status, Pageable pageable);
-
-    Page<Application> findByApplicantId(UUID applicantId, Pageable pageable);
 
     Page<Application> findByNationalId(String nationalId, Pageable pageable);
 
