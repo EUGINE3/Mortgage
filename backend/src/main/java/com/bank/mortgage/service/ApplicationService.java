@@ -11,15 +11,13 @@ import java.util.UUID;
 
 public interface ApplicationService {
 
-    ApplicationResponse create(ApplicationRequest request);
+    ApplicationResponse createApplication(ApplicationRequest request);
 
-    ApplicationResponse getById(UUID id);
+    ApplicationResponse getApplicationById(UUID id);
 
-    PageResponse<ApplicationResponse> list(Pageable pageable);
+    PageResponse<ApplicationResponse> listApplications(Pageable pageable);
 
     PageResponse<ApplicationResponse> filterByStatus(String status, Pageable pageable);
-
-    PageResponse<ApplicationResponse> filterByApplicant(UUID applicantId, Pageable pageable);
 
     PageResponse<ApplicationResponse> filterByNationalId(String nationalId, Pageable pageable);
 
@@ -27,7 +25,7 @@ public interface ApplicationService {
 
     ApplicationResponse updateApplication(UUID id, ApplicationRequest request);
 
-    ApplicationResponse approveOrReject(UUID id, DecisionRequest request);
+    ApplicationResponse approveOrRejectApplication(UUID id, DecisionRequest request);
 
     void deleteApplication(UUID id);
 }

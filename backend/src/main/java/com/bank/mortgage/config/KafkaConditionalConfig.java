@@ -1,6 +1,5 @@
 package com.bank.mortgage.config;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
         havingValue = "true",
         matchIfMissing = true
 )
-@RequiredArgsConstructor
 @Slf4j
 public class KafkaConditionalConfig {
 

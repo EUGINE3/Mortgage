@@ -20,7 +20,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/auth/**", "/swagger-ui/**", "/v3/api-docs/**", "/actuator/health")
+                        .requestMatchers("/", "/api/v1/home", "/api/v1/auth/**", "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/actuator/health", "/webjars/**")
                         .permitAll()
                         .requestMatchers("/api/v1/applications/**")
                         .hasAnyRole("APPLICANT", "CREDIT_OFFICER")
