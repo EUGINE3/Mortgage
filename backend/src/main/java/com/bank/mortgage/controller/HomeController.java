@@ -17,8 +17,7 @@ public class HomeController {
                 "version", "1.0.0",
                 "status", "Running",
                 "documentation", "Available at /swagger-ui.html",
-                "h2-console", "Available at /h2-console"
-        );
+                "h2-console", "Available at /h2-console");
     }
 
     @GetMapping
@@ -28,7 +27,6 @@ public class HomeController {
                 "version", "1.0.0",
                 "status", "Running",
                 "documentation", "Available at /swagger-ui.html",
-                "h2-console", "Available at /h2-console"
-        );
+                "h2-console", "Available at /h2-console");
     }
 }

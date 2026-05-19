@@ -10,6 +10,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 
+import javax.crypto.SecretKey;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,32 +18,60 @@ import java.util.List;
 @Slf4j
 public class JwtUtil {
 
-    @Value("${app.jwt.secret:secret-key-for-jwt-token-signing}")
+    @Value("${app.jwt.secret:mysecretkeymysecretkeymysecretkey12}")
     private String jwtSecret;
 
+    private SecretKey getSigningKey() {
+        return Keys.hmacShaKeyFor(jwtSecret.getBytes());
+    }
+
+    // -----------------------------
+    // VALIDATE TOKEN
+    // -----------------------------
     public boolean validateToken(String token) {
+
         try {
-            Jwts.parser()
-                    .verifyWith(Keys.hmacShaKeyFor(jwtSecret.getBytes()))
-                    .build()
-                    .parseSignedClaims(token);
+            extractClaims(token);
             return true;
+
         } catch (Exception e) {
-            log.error("JWT token validation failed: {}", e.getMessage());
+
+            log.error("JWT validation failed: {}", e.getMessage());
             return false;
         }
     }
 
-    public Authentication getAuthentication(String token) {
-        Claims claims = Jwts.parser()
-                .verifyWith(Keys.hmacShaKeyFor(jwtSecret.getBytes()))
+    // -----------------------------
+    // BUILD SPRING AUTH OBJECT
+    // -----------------------------
+   public Authentication getAuthentication(String token) {
+
+    Claims claims = extractClaims(token);
+
+    String email = claims.getSubject();
+    String role = claims.get("role", String.class);
+
+    List<SimpleGrantedAuthority> authorities =
+            role != null
+                    ? List.of(new SimpleGrantedAuthority("ROLE_" + role))
+                    : Collections.emptyList();
+
+    return new UsernamePasswordAuthenticationToken(
+            email,
+            null,
+            authorities
+    );
+}
+
+    // -----------------------------
+    // PARSE CLAIMS
+    // -----------------------------
+    private Claims extractClaims(String token) {
+
+        return Jwts.parser()
+                .verifyWith(getSigningKey())
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
-
-        String subject = claims.getSubject();
-        List<SimpleGrantedAuthority> authorities = Collections.emptyList();
-
-        return new UsernamePasswordAuthenticationToken(subject, null, authorities);
     }
 }

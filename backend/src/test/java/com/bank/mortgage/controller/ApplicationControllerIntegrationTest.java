@@ -1,5 +1,6 @@
 package com.bank.mortgage.controller;
 
+import com.bank.mortgage.config.TestConfig;
 import com.bank.mortgage.domain.User;
 import com.bank.mortgage.dto.request.ApplicationRequest;
 import com.bank.mortgage.dto.response.ApplicationResponse;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
@@ -29,74 +31,73 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("h2")
+@Import(TestConfig.class)
 class ApplicationControllerIntegrationTest {
 
-    @Autowired
-    private MockMvc mockMvc;
+        @Autowired
+        private MockMvc mockMvc;
 
-    @Autowired
-    private UserRepository userRepository;
+        @Autowired
+        private UserRepository userRepository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+        @Autowired
+        private PasswordEncoder passwordEncoder;
 
-    @Autowired
-    private ObjectMapper objectMapper;
+        @Autowired
+        private ObjectMapper objectMapper;
 
-    private User applicant;
-    private String applicantEmail;
+        private User applicant;
+        private String applicantEmail;
 
-    @BeforeEach
-    void setUp() {
-        userRepository.deleteAll();
+        @BeforeEach
+        void setUp() {
+                userRepository.deleteAll();
 
-        applicantEmail = "applicant@test.com";
+                applicantEmail = "applicant@test.com";
 
-        applicant = User.builder()
-                .id(UUID.randomUUID())
-                .email(applicantEmail)
-                .password(passwordEncoder.encode("password123"))
-                .fullName("Test Applicant")
-                .role("APPLICANT")
-                .createdAt(Instant.now())
-                .build();
+                applicant = User.builder()
+                                .id(UUID.randomUUID())
+                                .email(applicantEmail)
+                                .password(passwordEncoder.encode("password123"))
+                                .fullName("Test Applicant")
+                                .role("APPLICANT")
+                                .createdAt(Instant.now())
+                                .build();
 
-        userRepository.save(applicant);
-    }
+                userRepository.save(applicant);
+        }
 
-    @Test
-    @WithMockUser(username = "applicant@test.com", roles = "APPLICANT")
-    void createApplicationShouldReturnSuccessfulResponseWithValidRequest() throws Exception {
-        ApplicationRequest request = new ApplicationRequest();
-        request.setNationalId("1234567890");
-        request.setLoanAmount(BigDecimal.valueOf(100000));
-        request.setTenureMonths(60);
-        request.setIncome(BigDecimal.valueOf(50000));
+        @Test
+        @WithMockUser(username = "applicant@test.com", roles = "APPLICANT")
+        void createApplicationShouldReturnSuccessfulResponseWithValidRequest() throws Exception {
+                ApplicationRequest request = new ApplicationRequest();
+                request.setNationalId("1234567890");
+                request.setLoanAmount(BigDecimal.valueOf(100000));
+                request.setTenureMonths(60);
+                request.setIncome(BigDecimal.valueOf(50000));
 
-        MvcResult result = mockMvc.perform(
-                post("/api/v1/applications")
-                        .contentType(APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(request))
-        )
-                .andExpect(status().isOk())
-                .andReturn();
+                MvcResult result = mockMvc.perform(
+                                post("/api/v1/applications")
+                                                .contentType(APPLICATION_JSON)
+                                                .content(objectMapper.writeValueAsString(request)))
+                                .andExpect(status().isCreated())
+                                .andReturn();
 
-        String content = result.getResponse().getContentAsString();
-        ApplicationResponse response = objectMapper.readValue(content, ApplicationResponse.class);
+                String content = result.getResponse().getContentAsString();
+                ApplicationResponse response = objectMapper.readValue(content, ApplicationResponse.class);
 
-        assertThat(response)
-                .isNotNull()
-                .extracting("loanAmount", "tenureMonths", "status")
-                .contains(
-                        BigDecimal.valueOf(100000),
-                        60,
-                        "PENDING"
-                );
-    }
+                assertThat(response)
+                                .isNotNull()
+                                .extracting("loanAmount", "tenureMonths", "status")
+                                .contains(
+                                                BigDecimal.valueOf(100000),
+                                                60,
+                                                "PENDING");
+        }
 
-    @Test
-    void homeEndpointShouldBeAccessibleWithoutAuthentication() throws Exception {
-        mockMvc.perform(get("/api/v1/home"))
-                .andExpect(status().isOk());
-    }
+        @Test
+        void homeEndpointShouldBeAccessibleWithoutAuthentication() throws Exception {
+                mockMvc.perform(get("/api/v1/home"))
+                                .andExpect(status().isOk());
+        }
 }

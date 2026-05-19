@@ -16,19 +16,11 @@ public class RegisterRequest {
     @Size(min = 6, message = "Password must be at least 6 characters")
     private String password;
 
-    @NotBlank(message = "First name is required")
-    private String firstName;
-
-    @NotBlank(message = "Last name is required")
-    private String lastName;
+    @NotBlank(message = "Full name is required")
+    private String fullName;
 
     @NotBlank(message = "National ID is required")
     private String nationalId;
-
-    @NotBlank(message = "Phone number is required")
-    private String phoneNumber;
-
-    private String address;
 
     @NotBlank(message = "Role is required")
     private String role; // APPLICANT or CREDIT_OFFICER

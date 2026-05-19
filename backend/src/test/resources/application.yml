@@ -16,7 +16,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
-    show-sql: true
+    show-sql: false
     properties:
       hibernate.dialect: org.hibernate.dialect.H2Dialect
       hibernate.jdbc.batch_size: 10
@@ -24,10 +24,6 @@ spring:
 
   kafka:
     bootstrap-servers: localhost:9092
-    enabled: false
-    producer:
-      acks: all
-      retries: 3
 
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
@@ -44,16 +40,14 @@ server:
 
 logging:
   level:
-    root: DEBUG
+    root: WARN
     com.bank.mortgage: DEBUG
-    org.springframework.web: DEBUG
-    org.springframework.security: DEBUG
-  pattern:
-    console: "[%d{yyyy-MM-dd HH:mm:ss}] [%thread] %-5level %logger{36} - %msg%n"
+    org.springframework.web: WARN
+    org.springframework.security: WARN
 
 app:
   jwt:
-    secret: 9f2c7a1d6b8e4f3c9a0d8e7f6b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c
+    secret: test-secret-key-for-testing
     expiration-ms: 3600000
 
 springdoc:
