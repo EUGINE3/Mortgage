@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-05-19T17:54:55+0300",
-    comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.46.0.v20260407-0427, environment: Java 21.0.7 (Ubuntu)"
+    date = "2026-05-19T18:43:58+0300",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.7 (Ubuntu)"
 )
 @Component
 public class ApplicationMapperImpl implements ApplicationMapper {
@@ -21,13 +21,13 @@ public class ApplicationMapperImpl implements ApplicationMapper {
 
         ApplicationResponse.ApplicationResponseBuilder applicationResponse = ApplicationResponse.builder();
 
-        applicationResponse.createdAt( application.getCreatedAt() );
         applicationResponse.id( application.getId() );
-        applicationResponse.loanAmount( application.getLoanAmount() );
         if ( application.getStatus() != null ) {
             applicationResponse.status( application.getStatus().name() );
         }
+        applicationResponse.loanAmount( application.getLoanAmount() );
         applicationResponse.tenureMonths( application.getTenureMonths() );
+        applicationResponse.createdAt( application.getCreatedAt() );
 
         return applicationResponse.build();
     }

@@ -49,7 +49,9 @@ public class ApplicationServiceImpl implements ApplicationService {
                 .build();
 
         Application saved = repository.save(application);
-        eventPublisher.publishApplicationCreated(saved);
+        
+        // Temporarily disable Kafka event publishing
+       // eventPublisher.publishApplicationCreated(saved);
 
         return mapper.toResponse(saved);
     }

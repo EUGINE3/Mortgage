@@ -13,7 +13,7 @@ import java.util.Date;
 @Service
 public class JwtService {
 
-    @Value("${app.jwt.secret:mysecretkeymysecretkeymysecretkey12}")
+    @Value("${app.jwt.secret:9f2c7a1d6b8e4f3c9a0d8e7f6b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c}")
     private String jwtSecret;
 
     private static final long EXPIRATION = 1000 * 60 * 60; // 1 hour

@@ -32,8 +32,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
             return;
         }
+        log.debug("Processing request to: {}", request.getRequestURI());
+        log.debug("Authorization header: {}", request.getHeader("Authorization"));
 
         String token = extractToken(request);
+        log.debug("Token extracted: {}", token != null ? "present (length: " + token.length() + ")" : "null");
 
         if (token != null && jwtUtil.validateToken(token)) {
             try {
