@@ -49,7 +49,7 @@ public class ApplicationServiceImpl implements ApplicationService {
                 .build();
 
         Application saved = repository.save(application);
-        eventPublisher.publishApplicationCreated(saved);
+        // eventPublisher.publishApplicationCreated(saved);
 
         return mapper.toResponse(saved);
     }
