@@ -5,6 +5,14 @@ import com.bank.mortgage.dto.request.DecisionRequest;
 import com.bank.mortgage.dto.response.ApplicationResponse;
 import com.bank.mortgage.dto.response.PageResponse;
 import com.bank.mortgage.service.ApplicationService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -18,6 +26,8 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/applications")
+@Tag(name = "Applications", description = "Mortgage application management endpoints")
+@SecurityRequirement(name = "bearer-jwt")
 public class ApplicationController {
 
     private final ApplicationService applicationService;
@@ -28,6 +38,9 @@ public class ApplicationController {
 
     @PostMapping
     @PreAuthorize("hasRole('APPLICANT')")
+    @Operation(summary = "Create a new mortgage application")
+    @ApiResponse(responseCode = "201", description = "Application created successfully")
+    @ApiResponse(responseCode = "401", description = "Unauthorized")
     public ResponseEntity<ApplicationResponse> createApplication(@RequestBody ApplicationRequest request) {
         ApplicationResponse response = applicationService.createApplication(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
@@ -35,6 +48,8 @@ public class ApplicationController {
 
     @GetMapping
     @PreAuthorize("hasAnyRole('APPLICANT', 'CREDIT_OFFICER')")
+    @Operation(summary = "List applications (own for applicants, all for officers)")
+    @ApiResponse(responseCode = "200", description = "Applications retrieved successfully")
     public ResponseEntity<PageResponse<ApplicationResponse>> listApplications(
             @PageableDefault(size = 10, page = 0, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable) {
         PageResponse<ApplicationResponse> response = applicationService.listApplications(pageable);

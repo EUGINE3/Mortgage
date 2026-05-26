@@ -15,6 +15,16 @@ public class NoOpEventPublisher implements EventPublisher {
 
     @Override
     public void publishApplicationCreated(Application application) {
-        log.info("Kafka is disabled. Event publishing skipped for application {}", application.getId());
+        log.debug("Kafka is disabled. Event publishing skipped for application created: {}", application.getId());
+    }
+
+    @Override
+    public void publishApplicationUpdated(Application application) {
+        log.debug("Kafka is disabled. Event publishing skipped for application updated: {}", application.getId());
+    }
+
+    @Override
+    public void publishApplicationDeleted(String applicationId) {
+        log.debug("Kafka is disabled. Event publishing skipped for application deleted: {}", applicationId);
     }
 }

@@ -41,7 +41,14 @@ public class JwtUtil {
                 .getPayload();
 
         String subject = claims.getSubject();
-        List<SimpleGrantedAuthority> authorities = Collections.emptyList();
+        String role = claims.get("role", String.class);
+        
+        List<SimpleGrantedAuthority> authorities;
+        if (role != null) {
+            authorities = List.of(new SimpleGrantedAuthority("ROLE_" + role));
+        } else {
+            authorities = Collections.emptyList();
+        }
 
         return new UsernamePasswordAuthenticationToken(subject, null, authorities);
     }

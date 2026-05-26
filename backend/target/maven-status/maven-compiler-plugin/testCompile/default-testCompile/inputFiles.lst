@@ -3,7 +3,6 @@
 /home/eugine/Downloads/mortgage-service-starter/backend/src/test/java/com/bank/mortgage/controller/ApplicationControllerIntegrationTest.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/test/java/com/bank/mortgage/controller/HomeControllerTest.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/test/java/com/bank/mortgage/security/CustomUserDetailsServiceTest.java
-/home/eugine/Downloads/mortgage-service-starter/backend/src/test/java/com/bank/mortgage/security/JwtServiceTest.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/test/java/com/bank/mortgage/service/impl/ApplicationServiceImplTest.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/test/java/com/bank/mortgage/service/impl/DecisionServiceImplTest.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/test/java/com/bank/mortgage/util/SecurityUtilTest.java

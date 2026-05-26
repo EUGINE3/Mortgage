@@ -134,6 +134,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         application.setUpdatedAt(Instant.now());
 
         Application updated = repository.save(application);
+        eventPublisher.publishApplicationUpdated(updated);
         return mapper.toResponse(updated);
     }
 
@@ -151,6 +152,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         application.setUpdatedAt(Instant.now());
 
         Application updated = repository.save(application);
+        eventPublisher.publishApplicationUpdated(updated);
         return mapper.toResponse(updated);
     }
 
@@ -165,6 +167,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         }
 
         repository.delete(application);
+        eventPublisher.publishApplicationDeleted(id.toString());
     }
 
     private PageResponse<ApplicationResponse> buildPageResponse(Page<Application> page) {

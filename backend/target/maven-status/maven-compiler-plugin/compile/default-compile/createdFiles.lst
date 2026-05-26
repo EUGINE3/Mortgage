@@ -1,6 +1,7 @@
 com/bank/mortgage/repository/DecisionRepository.class
 com/bank/mortgage/exception/NotFoundException.class
 com/bank/mortgage/domain/Application$ApplicationBuilder.class
+com/bank/mortgage/config/WebConfig.class
 com/bank/mortgage/dto/response/ErrorResponse$ErrorResponseBuilder.class
 com/bank/mortgage/config/KafkaConfig.class
 com/bank/mortgage/exception/GlobalExceptionHandler.class
@@ -26,6 +27,7 @@ com/bank/mortgage/util/TraceUtil.class
 com/bank/mortgage/auth/AuthController.class
 com/bank/mortgage/controller/ApplicationController.class
 com/bank/mortgage/auth/AuthService.class
+com/bank/mortgage/config/RateLimitingInterceptor.class
 com/bank/mortgage/mapper/ApplicationMapperImpl.class
 com/bank/mortgage/dto/request/DecisionRequest.class
 com/bank/mortgage/dto/request/DocumentRequest.class

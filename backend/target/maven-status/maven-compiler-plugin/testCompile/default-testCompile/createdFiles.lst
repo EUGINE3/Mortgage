@@ -1,9 +1,0 @@
-com/bank/mortgage/security/JwtServiceTest.class
-com/bank/mortgage/auth/AuthServiceImplTest.class
-com/bank/mortgage/security/CustomUserDetailsServiceTest.class
-com/bank/mortgage/util/SecurityUtilTest.class
-com/bank/mortgage/controller/HomeControllerTest.class
-com/bank/mortgage/config/TestConfig.class
-com/bank/mortgage/service/impl/DecisionServiceImplTest.class
-com/bank/mortgage/service/impl/ApplicationServiceImplTest.class
-com/bank/mortgage/controller/ApplicationControllerIntegrationTest.class
