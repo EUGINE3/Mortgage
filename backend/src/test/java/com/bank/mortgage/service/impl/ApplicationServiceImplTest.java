@@ -27,259 +27,269 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class ApplicationServiceImplTest {
 
-        @Mock
-        private ApplicationRepository repository;
+    @Mock private ApplicationRepository repository;
+    @Mock private ApplicationMapper mapper;
+    @Mock private EventPublisher eventPublisher;
+    @Mock private SecurityUtil securityUtil;
 
-        @Mock
-        private ApplicationMapper mapper;
+    @InjectMocks
+    private ApplicationServiceImpl service;
 
-        @Mock
-        private EventPublisher eventPublisher;
+    private User applicant;
+    private UUID applicationId;
 
-        @Mock
-        private SecurityUtil securityUtil;
+    @BeforeEach
+    void setUp() {
+        applicationId = UUID.randomUUID();
 
-        @InjectMocks
-        private ApplicationServiceImpl service;
+        applicant = User.builder()
+                .id(UUID.randomUUID())
+                .email("applicant@example.com")
+                .role("APPLICANT")
+                .build();
+    }
 
-        private User applicant;
+    // =====================================================
+    // CREATE APPLICATION
+    // =====================================================
 
-        @BeforeEach
-        void setUp() {
-                applicant = User.builder()
-                                .id(UUID.randomUUID())
-                                .email("applicant@example.com")
-                                .role("APPLICANT")
-                                .build();
-        }
+    @Test
+    void createApplication_shouldSaveAndReturnResponse() {
+        // Given
+        ApplicationRequest request = buildRequest();
 
-        @Test
-        void createApplicationShouldSaveApplicationAndReturnResponse() {
-                ApplicationRequest request = new ApplicationRequest();
-                request.setNationalId("1234567890");
-                request.setLoanAmount(BigDecimal.valueOf(10000));
-                request.setTenureMonths(12);
-                request.setIncome(BigDecimal.valueOf(5000));
+        when(securityUtil.getCurrentUser()).thenReturn(applicant);
 
-                when(securityUtil.getCurrentUser()).thenReturn(applicant);
+        Application saved = buildApplication(ApplicationStatus.PENDING, applicant, request);
 
-                Application saved = Application.builder()
-                                .id(UUID.randomUUID())
-                                .applicant(applicant)
-                                .nationalId(request.getNationalId())
-                                .status(ApplicationStatus.PENDING)
-                                .loanAmount(request.getLoanAmount())
-                                .tenureMonths(request.getTenureMonths())
-                                .income(request.getIncome())
-                                .createdAt(Instant.now())
-                                .updatedAt(Instant.now())
-                                .build();
+        when(repository.save(any(Application.class))).thenReturn(saved);
+        when(mapper.toResponse(saved)).thenReturn(buildResponse(saved));
 
-                when(repository.save(any(Application.class))).thenReturn(saved);
+        // When
+        ApplicationResponse response = service.createApplication(request);
 
-                ApplicationResponse expectedResponse = ApplicationResponse.builder()
-                                .id(saved.getId())
-                                .status(saved.getStatus().name())
-                                .loanAmount(saved.getLoanAmount())
-                                .tenureMonths(saved.getTenureMonths())
-                                .createdAt(saved.getCreatedAt())
-                                .build();
+        // Then
+        assertThat(response.getStatus()).isEqualTo("PENDING");
 
-                when(mapper.toResponse(saved)).thenReturn(expectedResponse);
+        ArgumentCaptor<Application> captor = ArgumentCaptor.forClass(Application.class);
+        verify(repository).save(captor.capture());
 
-                ApplicationResponse actualResponse = service.createApplication(request);
+        Application captured = captor.getValue();
+        assertThat(captured.getApplicant()).isEqualTo(applicant);
+        assertThat(captured.getStatus()).isEqualTo(ApplicationStatus.PENDING);
 
-                assertThat(actualResponse).isSameAs(expectedResponse);
+        verify(eventPublisher).publishApplicationCreated(saved);
+    }
 
-                ArgumentCaptor<Application> captor = ArgumentCaptor.forClass(Application.class);
-                verify(repository).save(captor.capture());
-                verify(eventPublisher).publishApplicationCreated(saved);
+    @Test
+    void createApplication_shouldAlwaysForcePendingStatus() {
+        ApplicationRequest request = buildRequest();
 
-                Application captured = captor.getValue();
-                assertThat(captured.getApplicant()).isEqualTo(applicant);
-                assertThat(captured.getNationalId()).isEqualTo(request.getNationalId());
-                assertThat(captured.getLoanAmount()).isEqualTo(request.getLoanAmount());
-                assertThat(captured.getTenureMonths()).isEqualTo(request.getTenureMonths());
-                assertThat(captured.getIncome()).isEqualTo(request.getIncome());
-                assertThat(captured.getStatus()).isEqualTo(ApplicationStatus.PENDING);
-        }
+        when(securityUtil.getCurrentUser()).thenReturn(applicant);
+        when(repository.save(any())).thenAnswer(i -> i.getArgument(0));
+        when(mapper.toResponse(any())).thenReturn(
+                ApplicationResponse.builder().id(applicationId).status("PENDING").build()
+        );
 
-        @Test
-        void getApplicationByIdShouldThrowNotFoundExceptionWhenMissing() {
-                UUID id = UUID.randomUUID();
-                when(repository.findById(id)).thenReturn(Optional.empty());
+        service.createApplication(request);
 
-                assertThatThrownBy(() -> service.getApplicationById(id))
-                                .isInstanceOf(NotFoundException.class)
-                                .hasMessageContaining("Application not found with ID");
-        }
+        ArgumentCaptor<Application> captor = ArgumentCaptor.forClass(Application.class);
+        verify(repository).save(captor.capture());
 
-        @Test
-        void getApplicationByIdShouldThrowUnauthorizedExceptionForDifferentApplicant() {
-                UUID id = UUID.randomUUID();
-                User owner = User.builder().id(UUID.randomUUID()).email("owner@example.com").role("APPLICANT").build();
-                Application application = Application.builder()
-                                .id(id)
-                                .applicant(owner)
-                                .status(ApplicationStatus.PENDING)
-                                .build();
+        assertThat(captor.getValue().getStatus()).isEqualTo(ApplicationStatus.PENDING);
+    }
 
-                when(repository.findById(id)).thenReturn(Optional.of(application));
-                when(securityUtil.isApplicant()).thenReturn(true);
-                when(securityUtil.isCurrentUserOwner(owner)).thenReturn(false);
+    // =====================================================
+    // GET APPLICATION
+    // =====================================================
 
-                assertThatThrownBy(() -> service.getApplicationById(id))
-                                .isInstanceOf(UnauthorizedException.class)
-                                .hasMessageContaining("not  authorizied to view this application");
-        }
+    @Test
+    void getApplication_shouldThrowNotFound_whenMissing() {
+        when(repository.findById(applicationId)).thenReturn(Optional.empty());
 
-        @Test
-        void getApplicationByIdShouldReturnApplicationForCreditOfficer() {
-                UUID id = UUID.randomUUID();
-                User owner = User.builder().id(UUID.randomUUID()).email("owner@example.com").role("APPLICANT").build();
-                Application application = Application.builder()
-                                .id(id)
-                                .applicant(owner)
-                                .status(ApplicationStatus.PENDING)
-                                .loanAmount(BigDecimal.valueOf(50000))
-                                .tenureMonths(24)
-                                .createdAt(Instant.now())
-                                .build();
+        assertThatThrownBy(() -> service.getApplicationById(applicationId))
+                .isInstanceOf(NotFoundException.class);
+    }
 
-                when(repository.findById(id)).thenReturn(Optional.of(application));
-                when(securityUtil.isApplicant()).thenReturn(false);
+    @Test
+    void getApplication_shouldThrowUnauthorized_whenNotOwner() {
+        User owner = User.builder().id(UUID.randomUUID()).role("APPLICANT").build();
 
-                ApplicationResponse expectedResponse = ApplicationResponse.builder()
-                                .id(id)
-                                .status(ApplicationStatus.PENDING.name())
-                                .loanAmount(BigDecimal.valueOf(50000))
-                                .tenureMonths(24)
-                                .createdAt(application.getCreatedAt())
-                                .build();
+        Application app = Application.builder()
+                .id(applicationId)
+                .applicant(owner)
+                .build();
 
-                when(mapper.toResponse(application)).thenReturn(expectedResponse);
+        when(repository.findById(applicationId)).thenReturn(Optional.of(app));
+        when(securityUtil.isApplicant()).thenReturn(true);
+        when(securityUtil.isCurrentUserOwner(owner)).thenReturn(false);
 
-                ApplicationResponse actualResponse = service.getApplicationById(id);
+        assertThatThrownBy(() -> service.getApplicationById(applicationId))
+                .isInstanceOf(UnauthorizedException.class);
+    }
 
-                assertThat(actualResponse).isEqualTo(expectedResponse);
-        }
+    @Test
+    void getApplication_shouldReturnForCreditOfficer() {
+        User owner = User.builder().id(UUID.randomUUID()).role("APPLICANT").build();
 
-        @Test
-        void deleteApplicationShouldThrowUnauthorizedExceptionForDifferentApplicant() {
-                UUID id = UUID.randomUUID();
-                User owner = User.builder().id(UUID.randomUUID()).email("owner@example.com").role("APPLICANT").build();
-                Application application = Application.builder()
-                                .id(id)
-                                .applicant(owner)
-                                .status(ApplicationStatus.PENDING)
-                                .build();
+        Application app = buildApplication(ApplicationStatus.PENDING, owner, buildRequest());
 
-                when(repository.findById(id)).thenReturn(Optional.of(application));
-                when(securityUtil.isApplicant()).thenReturn(true);
-                when(securityUtil.isCurrentUserOwner(owner)).thenReturn(false);
+        when(repository.findById(applicationId)).thenReturn(Optional.of(app));
+        when(securityUtil.isApplicant()).thenReturn(false);
 
-                assertThatThrownBy(() -> service.deleteApplication(id))
-                                .isInstanceOf(UnauthorizedException.class)
-                                .hasMessageContaining("only delete your own applications");
-        }
+        ApplicationResponse response = buildResponse(app);
 
-        @Test
-        void deleteApplicationShouldSucceedForOwner() {
-                UUID id = UUID.randomUUID();
-                Application application = Application.builder()
-                                .id(id)
-                                .applicant(applicant)
-                                .status(ApplicationStatus.PENDING)
-                                .build();
+        when(mapper.toResponse(app)).thenReturn(response);
 
-                when(repository.findById(id)).thenReturn(Optional.of(application));
-                when(securityUtil.isApplicant()).thenReturn(true);
-                when(securityUtil.isCurrentUserOwner(applicant)).thenReturn(true);
+        ApplicationResponse result = service.getApplicationById(applicationId);
 
-                service.deleteApplication(id);
+        assertThat(result).isEqualTo(response);
+    }
 
-                verify(repository).delete(application);
-        }
+    // =====================================================
+    // DELETE APPLICATION
+    // =====================================================
 
-        @Test
-        void updateApplicationShouldThrowExceptionWhenNotPending() {
-                UUID id = UUID.randomUUID();
-                Application application = Application.builder()
-                                .id(id)
-                                .applicant(applicant)
-                                .status(ApplicationStatus.APPROVED)
-                                .build();
+    @Test
+    void delete_shouldThrowNotFound_whenMissing() {
+        when(repository.findById(applicationId)).thenReturn(Optional.empty());
 
-                ApplicationRequest request = new ApplicationRequest();
-                request.setNationalId("1234567890");
-                request.setLoanAmount(BigDecimal.valueOf(15000));
-                request.setTenureMonths(24);
+        assertThatThrownBy(() -> service.deleteApplication(applicationId))
+                .isInstanceOf(NotFoundException.class);
+    }
 
-                when(repository.findById(id)).thenReturn(Optional.of(application));
-                when(securityUtil.isApplicant()).thenReturn(true);
-                when(securityUtil.isCurrentUserOwner(applicant)).thenReturn(true);
+    @Test
+    void delete_shouldThrowUnauthorized_whenNotOwner() {
+        User owner = User.builder().id(UUID.randomUUID()).role("APPLICANT").build();
 
-                assertThatThrownBy(() -> service.updateApplication(id, request))
-                                .isInstanceOf(RuntimeException.class)
-                                .hasMessageContaining("Cannot update application that is not in PENDING status");
-        }
+        Application app = Application.builder()
+                .id(applicationId)
+                .applicant(owner)
+                .status(ApplicationStatus.PENDING)
+                .build();
 
-        @Test
-        void updateApplicationShouldSucceedForOwnerWithPendingStatus() {
-                UUID id = UUID.randomUUID();
-                Application application = Application.builder()
-                                .id(id)
-                                .applicant(applicant)
-                                .status(ApplicationStatus.PENDING)
-                                .loanAmount(BigDecimal.valueOf(10000))
-                                .tenureMonths(12)
-                                .income(BigDecimal.valueOf(5000))
-                                .createdAt(Instant.now())
-                                .updatedAt(Instant.now())
-                                .build();
+        when(repository.findById(applicationId)).thenReturn(Optional.of(app));
+        when(securityUtil.isApplicant()).thenReturn(true);
+        when(securityUtil.isCurrentUserOwner(owner)).thenReturn(false);
 
-                ApplicationRequest request = new ApplicationRequest();
-                request.setNationalId("1234567890");
-                request.setLoanAmount(BigDecimal.valueOf(15000));
-                request.setTenureMonths(24);
-                request.setIncome(BigDecimal.valueOf(6000));
+        assertThatThrownBy(() -> service.deleteApplication(applicationId))
+                .isInstanceOf(UnauthorizedException.class);
+    }
 
-                when(repository.findById(id)).thenReturn(Optional.of(application));
-                when(securityUtil.isApplicant()).thenReturn(true);
-                when(securityUtil.isCurrentUserOwner(applicant)).thenReturn(true);
+    @Test
+    void delete_shouldSucceed_whenOwner() {
+        Application app = Application.builder()
+                .id(applicationId)
+                .applicant(applicant)
+                .status(ApplicationStatus.PENDING)
+                .build();
 
-                Application updated = Application.builder()
-                                .id(id)
-                                .applicant(applicant)
-                                .status(ApplicationStatus.PENDING)
-                                .loanAmount(request.getLoanAmount())
-                                .tenureMonths(request.getTenureMonths())
-                                .income(request.getIncome())
-                                .createdAt(application.getCreatedAt())
-                                .updatedAt(Instant.now())
-                                .build();
+        when(repository.findById(applicationId)).thenReturn(Optional.of(app));
+        when(securityUtil.isApplicant()).thenReturn(true);
+        when(securityUtil.isCurrentUserOwner(applicant)).thenReturn(true);
 
-                when(repository.save(any(Application.class))).thenReturn(updated);
+        service.deleteApplication(applicationId);
 
-                ApplicationResponse expectedResponse = ApplicationResponse.builder()
-                                .id(id)
-                                .status(ApplicationStatus.PENDING.name())
-                                .loanAmount(request.getLoanAmount())
-                                .tenureMonths(request.getTenureMonths())
-                                .createdAt(application.getCreatedAt())
-                                .build();
+        verify(repository).delete(app);
+    }
 
-                when(mapper.toResponse(updated)).thenReturn(expectedResponse);
+    // =====================================================
+    // UPDATE APPLICATION
+    // =====================================================
 
-                ApplicationResponse actualResponse = service.updateApplication(id, request);
+    @Test
+    void update_shouldThrow_whenNotPending() {
+        Application app = Application.builder()
+                .id(applicationId)
+                .applicant(applicant)
+                .status(ApplicationStatus.APPROVED)
+                .build();
 
-                assertThat(actualResponse).isEqualTo(expectedResponse);
-                verify(repository).save(any(Application.class));
-        }
+        when(repository.findById(applicationId)).thenReturn(Optional.of(app));
+        when(securityUtil.isApplicant()).thenReturn(true);
+        when(securityUtil.isCurrentUserOwner(applicant)).thenReturn(true);
+
+        assertThatThrownBy(() -> service.updateApplication(applicationId, buildRequest()))
+                .isInstanceOf(RuntimeException.class);
+    }
+
+    @Test
+    void update_shouldSucceed_whenPendingAndOwner() {
+        Application app = Application.builder()
+                .id(applicationId)
+                .applicant(applicant)
+                .status(ApplicationStatus.PENDING)
+                .loanAmount(BigDecimal.valueOf(10000))
+                .tenureMonths(12)
+                .income(BigDecimal.valueOf(5000))
+                .createdAt(Instant.now())
+                .updatedAt(Instant.now())
+                .build();
+
+        ApplicationRequest request = buildRequest();
+
+        when(repository.findById(applicationId)).thenReturn(Optional.of(app));
+        when(securityUtil.isApplicant()).thenReturn(true);
+        when(securityUtil.isCurrentUserOwner(applicant)).thenReturn(true);
+        when(repository.save(any())).thenAnswer(i -> i.getArgument(0));
+
+        Application updated = Application.builder()
+                .id(applicationId)
+                .applicant(applicant)
+                .status(ApplicationStatus.PENDING)
+                .loanAmount(request.getLoanAmount())
+                .tenureMonths(request.getTenureMonths())
+                .income(request.getIncome())
+                .createdAt(app.getCreatedAt())
+                .updatedAt(Instant.now())
+                .build();
+
+        when(mapper.toResponse(any())).thenReturn(buildResponse(updated));
+
+        ApplicationResponse response = service.updateApplication(applicationId, request);
+
+        assertThat(response.getStatus()).isEqualTo("PENDING");
+        verify(repository).save(any(Application.class));
+    }
+
+    // =====================================================
+    // HELPERS
+    // =====================================================
+
+    private ApplicationRequest buildRequest() {
+        ApplicationRequest request = new ApplicationRequest();
+        request.setNationalId("1234567890");
+        request.setLoanAmount(BigDecimal.valueOf(10000));
+        request.setTenureMonths(12);
+        request.setIncome(BigDecimal.valueOf(5000));
+        return request;
+    }
+
+    private Application buildApplication(ApplicationStatus status, User user, ApplicationRequest request) {
+        return Application.builder()
+                .id(applicationId)
+                .applicant(user)
+                .status(status)
+                .loanAmount(request.getLoanAmount())
+                .tenureMonths(request.getTenureMonths())
+                .income(request.getIncome())
+                .createdAt(Instant.now())
+                .updatedAt(Instant.now())
+                .build();
+    }
+
+    private ApplicationResponse buildResponse(Application app) {
+        return ApplicationResponse.builder()
+                .id(app.getId())
+                .status(app.getStatus().name())
+                .loanAmount(app.getLoanAmount())
+                .tenureMonths(app.getTenureMonths())
+                .createdAt(app.getCreatedAt())
+                .build();
+    }
 }

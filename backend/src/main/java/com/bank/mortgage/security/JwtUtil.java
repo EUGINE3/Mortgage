@@ -59,10 +59,12 @@ public class JwtUtil {
         String username = claims.getSubject();
         String role = claims.get("role", String.class);
 
-	List<SimpleGrantedAuthority> authorities =
-        role != null && !role.isBlank()
-                ? List.of(new SimpleGrantedAuthority("ROLE_" + role.trim()))
-                : Collections.emptyList();
+        List<SimpleGrantedAuthority> authorities;
+        if (role != null) {
+            authorities = List.of(new SimpleGrantedAuthority("ROLE_" + role));
+        } else {
+            authorities = Collections.emptyList();
+        }
 
         // Extract roles from claims
         

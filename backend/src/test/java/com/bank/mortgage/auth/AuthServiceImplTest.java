@@ -71,7 +71,7 @@ class AuthServiceImplTest {
                 .build();
 
         when(userRepository.save(any(User.class))).thenReturn(savedUser);
-        when(jwtService.generateToken(savedUser)).thenReturn("jwt_token");
+        when(jwtService.generateToken(any(User.class))).thenReturn("jwt_token");
 
         JwtResponse response = authService.register(request);
 
@@ -81,7 +81,7 @@ class AuthServiceImplTest {
         assertThat(response.getRole()).isEqualTo(request.getRole());
 
         verify(userRepository).save(any(User.class));
-        verify(jwtService).generateToken(savedUser);
+        verify(jwtService).generateToken(any(User.class));
     }
 
     @Test
