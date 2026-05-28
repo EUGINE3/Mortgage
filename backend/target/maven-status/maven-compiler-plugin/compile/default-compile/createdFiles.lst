@@ -71,5 +71,6 @@ com/bank/mortgage/repository/UserRepository.class
 com/bank/mortgage/mapper/DocumentMapper.class
 com/bank/mortgage/domain/enums/UserRole.class
 com/bank/mortgage/dto/response/LoginResponse.class
+com/bank/mortgage/dto/request/DocumentUploadRequest$DocumentUploadRequestBuilder.class
 com/bank/mortgage/dto/response/ApplicationResponse.class
 com/bank/mortgage/mapper/DocumentMapperImpl.class
