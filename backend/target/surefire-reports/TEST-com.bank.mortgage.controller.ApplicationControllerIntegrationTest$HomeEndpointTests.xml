@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests" time="0.658" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests" time="0.611" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/eugine/Downloads/mortgage-service-starter/backend/target/surefire/surefirebooter-20260528164346909_3.jar /home/eugine/Downloads/mortgage-service-starter/backend/target/surefire 2026-05-28T16-43-46_297-jvmRun1 surefire-20260528164346909_1tmp surefire_0-20260528164346909_2tmp"/>
+    <property name="sun.java.command" value="/home/eugine/Downloads/mortgage-service-starter/backend/target/surefire/surefirebooter-20260529160944473_3.jar /home/eugine/Downloads/mortgage-service-starter/backend/target/surefire 2026-05-29T16-09-44_133-jvmRun1 surefire-20260529160944473_1tmp surefire_0-20260529160944473_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/eugine/Downloads/mortgage-service-starter/backend/target/test-classes:/home/eugine/Downloads/mortgage-service-starter/backend/target/classes:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.3.5/spring-boot-starter-web-3.3.5.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter/3.3.5/spring-boot-starter-3.3.5.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot/3.3.5/spring-boot-3.3.5.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.3.5/spring-boot-autoconfigure-3.3.5.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.3.5/spring-boot-starter-logging-3.3.5.jar:/home/eugine/.m2/repository/ch/qos/logback/logback-classic/1.5.11/logback-classic-1.5.11.jar:/home/eugine/.m2/repository/ch/qos/logback/logback-core/1.5.11/logback-core-1.5.11.jar:/home/eugine/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.23.1/log4j-to-slf4j-2.23.1.jar:/home/eugine/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/home/eugine/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar:/home/eugine/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/eugine/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.3.5/spring-boot-starter-json-3.3.5.jar:/home/eugine/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.17.2/jackson-datatype-jdk8-2.17.2.jar:/home/eugine/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.2/jackson-datatype-jsr310-2.17.2.jar:/home/eugine/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.17.2/jackson-module-parameter-names-2.17.2.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.3.5/spring-boot-starter-tomcat-3.3.5.jar:/home/eugine/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.31/tomcat-embed-core-10.1.31.jar:/home/eugine/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.31/tomcat-embed-websocket-10.1.31.jar:/home/eugine/.m2/repository/org/springframework/spring-web/6.1.14/spring-web-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/spring-beans/6.1.14/spring-beans-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/spring-webmvc/6.1.14/spring-webmvc-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/spring-expression/6.1.14/spring-expression-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.3.5/spring-boot-starter-security-3.3.5.jar:/home/eugine/.m2/repository/org/springframework/spring-aop/6.1.14/spring-aop-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/security/spring-security-config/6.3.4/spring-security-config-6.3.4.jar:/home/eugine/.m2/repository/org/springframework/security/spring-security-web/6.3.4/spring-security-web-6.3.4.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.3.5/spring-boot-starter-validation-3.3.5.jar:/home/eugine/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.31/tomcat-embed-el-10.1.31.jar:/home/eugine/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/home/eugine/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/eugine/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/home/eugine/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.3.5/spring-boot-starter-data-jpa-3.3.5.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.3.5/spring-boot-starter-aop-3.3.5.jar:/home/eugine/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.3.5/spring-boot-starter-jdbc-3.3.5.jar:/home/eugine/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/home/eugine/.m2/repository/org/springframework/spring-jdbc/6.1.14/spring-jdbc-6.1.14.jar:/home/eugine/.m2/repository/org/hibernate/orm/hibernate-core/6.5.3.Final/hibernate-core-6.5.3.Final.jar:/home/eugine/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/eugine/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/eugine/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/home/eugine/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/home/eugine/.m2/repository/net/bytebuddy/byte-buddy/1.14.19/byte-buddy-1.14.19.jar:/home/eugine/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/home/eugine/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/eugine/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/eugine/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/home/eugine/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/eugine/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/eugine/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/eugine/.m2/repository/org/springframework/data/spring-data-jpa/3.3.5/spring-data-jpa-3.3.5.jar:/home/eugine/.m2/repository/org/springframework/data/spring-data-commons/3.3.5/spring-data-commons-3.3.5.jar:/home/eugine/.m2/repository/org/springframework/spring-orm/6.1.14/spring-orm-6.1.14.jar:/home/eugine/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/eugine/.m2/repository/org/springframework/spring-aspects/6.1.14/spring-aspects-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/kafka/spring-kafka/3.2.4/spring-kafka-3.2.4.jar:/home/eugine/.m2/repository/org/springframework/spring-context/6.1.14/spring-context-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/spring-messaging/6.1.14/spring-messaging-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/spring-tx/6.1.14/spring-tx-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/retry/spring-retry/2.0.10/spring-retry-2.0.10.jar:/home/eugine/.m2/repository/org/apache/kafka/kafka-clients/3.7.1/kafka-clients-3.7.1.jar:/home/eugine/.m2/repository/com/github/luben/zstd-jni/1.5.6-3/zstd-jni-1.5.6-3.jar:/home/eugine/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/home/eugine/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar:/home/eugine/.m2/repository/io/micrometer/micrometer-observation/1.13.6/micrometer-observation-1.13.6.jar:/home/eugine/.m2/repository/io/micrometer/micrometer-commons/1.13.6/micrometer-commons-1.13.6.jar:/home/eugine/.m2/repository/org/postgresql/postgresql/42.7.4/postgresql-42.7.4.jar:/home/eugine/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/eugine/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/home/eugine/.m2/repository/org/flywaydb/flyway-core/10.10.0/flyway-core-10.10.0.jar:/home/eugine/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.17.2/jackson-dataformat-toml-2.17.2.jar:/home/eugine/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/home/eugine/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/eugine/.m2/repository/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar:/home/eugine/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.5.0/springdoc-openapi-starter-webmvc-ui-2.5.0.jar:/home/eugine/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.5.0/springdoc-openapi-starter-webmvc-api-2.5.0.jar:/home/eugine/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.5.0/springdoc-openapi-starter-common-2.5.0.jar:/home/eugine/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.21/swagger-core-jakarta-2.2.21.jar:/home/eugine/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/eugine/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.21/swagger-annotations-jakarta-2.2.21.jar:/home/eugine/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.21/swagger-models-jakarta-2.2.21.jar:/home/eugine/.m2/repository/org/webjars/swagger-ui/5.13.0/swagger-ui-5.13.0.jar:/home/eugine/.m2/repository/io/jsonwebtoken/jjwt-api/0.12.3/jjwt-api-0.12.3.jar:/home/eugine/.m2/repository/io/jsonwebtoken/jjwt-impl/0.12.3/jjwt-impl-0.12.3.jar:/home/eugine/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.12.3/jjwt-jackson-0.12.3.jar:/home/eugine/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/home/eugine/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-spring-boot-starter/2.9.0/opentelemetry-spring-boot-starter-2.9.0.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-spring-boot-autoconfigure/2.9.0/opentelemetry-spring-boot-autoconfigure-2.9.0.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-instrumentation-api/2.9.0/opentelemetry-instrumentation-api-2.9.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-api-incubator/1.43.0-alpha/opentelemetry-api-incubator-1.43.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-instrumentation-api-incubator/2.9.0-alpha/opentelemetry-instrumentation-api-incubator-2.9.0-alpha.jar:/home/eugine/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-instrumentation-annotations-support/2.9.0-alpha/opentelemetry-instrumentation-annotations-support-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv-incubating/1.25.0-alpha/opentelemetry-semconv-incubating-1.25.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-kafka-clients-2.6/2.9.0-alpha/opentelemetry-kafka-clients-2.6-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-kafka-clients-common/2.9.0-alpha/opentelemetry-kafka-clients-common-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-mongo-3.1/2.9.0-alpha/opentelemetry-mongo-3.1-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-spring-kafka-2.7/2.9.0-alpha/opentelemetry-spring-kafka-2.7-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-spring-web-3.1/2.9.0-alpha/opentelemetry-spring-web-3.1-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-spring-webmvc-5.3/2.9.0-alpha/opentelemetry-spring-webmvc-5.3-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-spring-webflux-5.3/2.9.0-alpha/opentelemetry-spring-webflux-5.3-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-reactor-3.1/2.9.0-alpha/opentelemetry-reactor-3.1-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-micrometer-1.5/2.9.0-alpha/opentelemetry-micrometer-1.5-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-log4j-appender-2.17/2.9.0-alpha/opentelemetry-log4j-appender-2.17-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-log4j-context-data-2.17-autoconfigure/2.9.0-alpha/opentelemetry-log4j-context-data-2.17-autoconfigure-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-logback-appender-1.0/2.9.0-alpha/opentelemetry-logback-appender-1.0-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-jdbc/2.9.0-alpha/opentelemetry-jdbc-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.37.0/opentelemetry-sdk-extension-autoconfigure-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-sdk-autoconfigure-support/2.9.0-alpha/opentelemetry-sdk-autoconfigure-support-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-spring-webmvc-6.0/2.9.0-alpha/opentelemetry-spring-webmvc-6.0-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-instrumentation-annotations/2.9.0/opentelemetry-instrumentation-annotations-2.9.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.37.0/opentelemetry-sdk-extension-autoconfigure-spi-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-api/1.37.0/opentelemetry-api-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-context/1.37.0/opentelemetry-context-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.37.0/opentelemetry-exporter-logging-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-exporter-otlp/1.37.0/opentelemetry-exporter-otlp-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.37.0/opentelemetry-sdk-trace-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.37.0/opentelemetry-sdk-metrics-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.37.0/opentelemetry-sdk-logs-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-exporter-otlp-common/1.37.0/opentelemetry-exporter-otlp-common-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-exporter-common/1.37.0/opentelemetry-exporter-common-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-exporter-sender-okhttp/1.37.0/opentelemetry-exporter-sender-okhttp-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.37.0/opentelemetry-sdk-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.37.0/opentelemetry-sdk-common-1.37.0.jar:/home/eugine/.m2/repository/io/opentelemetry/instrumentation/opentelemetry-resources/2.9.0-alpha/opentelemetry-resources-2.9.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.25.0-alpha/opentelemetry-semconv-1.25.0-alpha.jar:/home/eugine/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-incubator/1.43.0-alpha/opentelemetry-sdk-extension-incubator-1.43.0-alpha.jar:/home/eugine/.m2/repository/org/snakeyaml/snakeyaml-engine/2.8/snakeyaml-engine-2.8.jar:/home/eugine/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.17.2/jackson-dataformat-yaml-2.17.2.jar:/home/eugine/.m2/repository/io/opentelemetry/contrib/opentelemetry-aws-resources/1.39.0-alpha/opentelemetry-aws-resources-1.39.0-alpha.jar:/home/eugine/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/eugine/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/eugine/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/eugine/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.25/kotlin-stdlib-common-1.9.25.jar:/home/eugine/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.9.25/kotlin-stdlib-jdk8-1.9.25.jar:/home/eugine/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.25/kotlin-stdlib-1.9.25.jar:/home/eugine/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/home/eugine/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.9.25/kotlin-stdlib-jdk7-1.9.25.jar:/home/eugine/.m2/repository/io/opentelemetry/contrib/opentelemetry-gcp-resources/1.39.0-alpha/opentelemetry-gcp-resources-1.39.0-alpha.jar:/home/eugine/.m2/repository/com/google/cloud/opentelemetry/detector-resources-support/0.31.0/detector-resources-support-0.31.0.jar:/home/eugine/.m2/repository/io/opentelemetry/contrib/opentelemetry-baggage-processor/1.39.0-alpha/opentelemetry-baggage-processor-1.39.0-alpha.jar:/home/eugine/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar:/home/eugine/.m2/repository/org/testcontainers/postgresql/1.19.8/postgresql-1.19.8.jar:/home/eugine/.m2/repository/org/testcontainers/jdbc/1.19.8/jdbc-1.19.8.jar:/home/eugine/.m2/repository/org/testcontainers/database-commons/1.19.8/database-commons-1.19.8.jar:/home/eugine/.m2/repository/org/testcontainers/testcontainers/1.19.8/testcontainers-1.19.8.jar:/home/eugine/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/eugine/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:/home/eugine/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/home/eugine/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/eugine/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/home/eugine/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6.jar:/home/eugine/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/home/eugine/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.3.5/spring-boot-starter-test-3.3.5.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-test/3.3.5/spring-boot-test-3.3.5.jar:/home/eugine/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.3.5/spring-boot-test-autoconfigure-3.3.5.jar:/home/eugine/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/eugine/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/eugine/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/home/eugine/.m2/repository/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar:/home/eugine/.m2/repository/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar:/home/eugine/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/home/eugine/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:/home/eugine/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/eugine/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/eugine/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.5/junit-jupiter-5.10.5.jar:/home/eugine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.5/junit-jupiter-api-5.10.5.jar:/home/eugine/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/eugine/.m2/repository/org/junit/platform/junit-platform-commons/1.10.5/junit-platform-commons-1.10.5.jar:/home/eugine/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/eugine/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.5/junit-jupiter-params-5.10.5.jar:/home/eugine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.5/junit-jupiter-engine-5.10.5.jar:/home/eugine/.m2/repository/org/junit/platform/junit-platform-engine/1.10.5/junit-platform-engine-1.10.5.jar:/home/eugine/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/home/eugine/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar:/home/eugine/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/eugine/.m2/repository/org/mockito/mockito-junit-jupiter/5.11.0/mockito-junit-jupiter-5.11.0.jar:/home/eugine/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/eugine/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/eugine/.m2/repository/org/springframework/spring-core/6.1.14/spring-core-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/spring-jcl/6.1.14/spring-jcl-6.1.14.jar:/home/eugine/.m2/repository/org/springframework/spring-test/6.1.14/spring-test-6.1.14.jar:/home/eugine/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/home/eugine/.m2/repository/org/springframework/security/spring-security-test/6.3.4/spring-security-test-6.3.4.jar:/home/eugine/.m2/repository/org/springframework/security/spring-security-core/6.3.4/spring-security-core-6.3.4.jar:/home/eugine/.m2/repository/org/springframework/security/spring-security-crypto/6.3.4/spring-security-crypto-6.3.4.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="FILE_LOG_CHARSET" value="UTF-8"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="/home/eugine/Downloads/mortgage-service-starter/backend/target/surefire/surefirebooter-20260528164346909_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/eugine/Downloads/mortgage-service-starter/backend/target/surefire/surefirebooter-20260529160944473_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.7+6-Ubuntu-0ubuntu120.04"/>
     <property name="user.name" value="eugine"/>
@@ -49,7 +49,7 @@
     <property name="user.dir" value="/home/eugine/Downloads/mortgage-service-starter/backend"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="78922"/>
+    <property name="PID" value="221309"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
@@ -62,37 +62,37 @@
     <property name="CONSOLE_LOG_PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss}] [%thread] %-5level %logger{36} - %msg%n"/>
     <property name="LOGGED_APPLICATION_NAME" value="[mortgage-service] "/>
   </properties>
-  <testcase name="homeEndpointShouldBeAccessibleWithoutAuthentication" classname="com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests" time="0.314">
-    <system-out><![CDATA[[2026-05-28 16:44:49] [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [HomeEndpointTests]: using SpringBootContextLoader
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-[2026-05-28 16:44:49] [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests]: HomeEndpointTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-[2026-05-28 16:44:49] [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizerFactory implementations for test class [HomeEndpointTests]: [ImportsContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, HttpGraphQlTesterContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, MockitoContextCustomizerFactory, TestRestTemplateContextCustomizerFactory, WebTestClientContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, ObservabilityContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, PropertyMappingContextCustomizerFactory, WebDriverContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
-[2026-05-28 16:44:49] [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [HomeEndpointTests]: [ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer, OnFailureConditionReportContextCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer]
-[2026-05-28 16:44:49] [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bank.mortgage.MortgageApplication for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.u.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
-[2026-05-28 16:44:49] [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [HomeEndpointTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, WithSecurityContextTestExecutionListener, ReactorContextTestExecutionListener, ResetMocksTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener]
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test class: class [HomeEndpointTests], class annotated with @DirtiesContext [false] with mode [null]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 49, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 50, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 51, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 52, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 53, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 54, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [HomeEndpointTests], method [homeEndpointShouldBeAccessibleWithoutAuthentication], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 55, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 56, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(663641998<open>)] for JPA transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@44a3b4d9]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : a1_0
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.bank.mortgage.domain.Application(21))] with identifierForTableGroup [com.bank.mortgage.domain.Application] for NavigablePath [com.bank.mortgage.domain.Application] 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@79176fe4] with identifierForTableGroup [com.bank.mortgage.domain.Application.applicant] for NavigablePath [com.bank.mortgage.domain.Application.applicant] 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+  <testcase name="homeEndpointShouldBeAccessibleWithoutAuthentication" classname="com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests" time="0.286">
+    <system-out><![CDATA[[2026-05-29 16:10:28] [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [HomeEndpointTests]: using SpringBootContextLoader
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+[2026-05-29 16:10:28] [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests]: HomeEndpointTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2026-05-29 16:10:28] [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizerFactory implementations for test class [HomeEndpointTests]: [ImportsContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, HttpGraphQlTesterContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, MockitoContextCustomizerFactory, TestRestTemplateContextCustomizerFactory, WebTestClientContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, ObservabilityContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, PropertyMappingContextCustomizerFactory, WebDriverContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
+[2026-05-29 16:10:28] [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [HomeEndpointTests]: [ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer, OnFailureConditionReportContextCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer]
+[2026-05-29 16:10:28] [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bank.mortgage.MortgageApplication for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.u.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
+[2026-05-29 16:10:28] [main] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [HomeEndpointTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, WithSecurityContextTestExecutionListener, ReactorContextTestExecutionListener, ResetMocksTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener]
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test class: class [HomeEndpointTests], class annotated with @DirtiesContext [false] with mode [null]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 49, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 50, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 51, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 52, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 53, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 54, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [HomeEndpointTests], method [homeEndpointShouldBeAccessibleWithoutAuthentication], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 55, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 56, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(957773010<open>)] for JPA transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@475d1ad7]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : a1_0
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.bank.mortgage.domain.Application(21))] with identifierForTableGroup [com.bank.mortgage.domain.Application] for NavigablePath [com.bank.mortgage.domain.Application] 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@2275e86b] with identifierForTableGroup [com.bank.mortgage.domain.Application.applicant] for NavigablePath [com.bank.mortgage.domain.Application.applicant] 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
  \-EntityResultImpl [com.bank.mortgage.domain.Application(21)]
  |  +-EntityDelayedFetchImpl [com.bank.mortgage.domain.Application(21).applicant]
  |  +-BasicFetch [com.bank.mortgage.domain.Application(21).createdAt]
@@ -104,7 +104,7 @@
  |  +-BasicFetch [com.bank.mortgage.domain.Application(21).updatedAt]
  |  \-BasicFetch [com.bank.mortgage.domain.Application(21).version]
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
     SelectStatement {
       FromClause {
         StandardTableGroup (a1 : com.bank.mortgage.domain.Application(21)) {
@@ -117,12 +117,12 @@
       }
     }
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Initializer list:
-	  com.bank.mortgage.domain.Application(21) -> EntityResultInitializer(com.bank.mortgage.domain.Application(21))@1055517351 (SingleTableEntityPersister(com.bank.mortgage.domain.Application))
-	  com.bank.mortgage.domain.Application(21).applicant -> EntityDelayedFetchInitializer(com.bank.mortgage.domain.Application(21).applicant)@374090004 (ToOneAttributeMapping(NavigableRole[com.bank.mortgage.domain.Application.applicant])@2141841267)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.bank.mortgage.domain.Application(21) -> EntityResultInitializer(com.bank.mortgage.domain.Application(21))@1207118351 (SingleTableEntityPersister(com.bank.mortgage.domain.Application))
+	  com.bank.mortgage.domain.Application(21).applicant -> EntityDelayedFetchInitializer(com.bank.mortgage.domain.Application(21).applicant)@2049544179 (ToOneAttributeMapping(NavigableRole[com.bank.mortgage.domain.Application.applicant])@299441970)
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     select
         a1_0.id,
         a1_0.applicant_id,
@@ -150,18 +150,18 @@ Hibernate:
         a1_0.version 
     from
         applications a1_0
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(663641998<open>)]
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(663641998<open>)] after transaction
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(932073657<open>)] for JPA transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@40fdcbd5]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : u1_0
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.bank.mortgage.domain.User(22))] with identifierForTableGroup [com.bank.mortgage.domain.User] for NavigablePath [com.bank.mortgage.domain.User] 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(957773010<open>)]
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(957773010<open>)] after transaction
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(448889461<open>)] for JPA transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@2ca1c0c9]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : u1_0
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.bank.mortgage.domain.User(22))] with identifierForTableGroup [com.bank.mortgage.domain.User] for NavigablePath [com.bank.mortgage.domain.User] 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
  \-EntityResultImpl [com.bank.mortgage.domain.User(22)]
  |  +-BasicFetch [com.bank.mortgage.domain.User(22).createdAt]
  |  +-BasicFetch [com.bank.mortgage.domain.User(22).email]
@@ -170,7 +170,7 @@ Hibernate:
  |  +-BasicFetch [com.bank.mortgage.domain.User(22).password]
  |  \-BasicFetch [com.bank.mortgage.domain.User(22).role]
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
     SelectStatement {
       FromClause {
         StandardTableGroup (u1 : com.bank.mortgage.domain.User(22)) {
@@ -179,11 +179,11 @@ Hibernate:
       }
     }
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Initializer list:
-	  com.bank.mortgage.domain.User(22) -> EntityResultInitializer(com.bank.mortgage.domain.User(22))@1039774283 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.bank.mortgage.domain.User(22) -> EntityResultInitializer(com.bank.mortgage.domain.User(22))@107650502 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -205,41 +205,41 @@ Hibernate:
         u1_0.role 
     from
         users u1_0
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [0] - [f8435946-ccbc-46e0-bc48-d386f69ae040]
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Hydrated EntityKey (com.bank.mortgage.domain.User(22)): f8435946-ccbc-46e0-bc48-d386f69ae040
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Created new entity instance [com.bank.mortgage.domain.User(22)#f8435946-ccbc-46e0-bc48-d386f69ae040] : 1079310433
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [1] - [2026-05-28T13:44:48.860761Z]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [2] - [applicant@test.com]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [3] - [Test Applicant]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [4] - [null]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [5] - [$2a$10$b1bWsuOAkBPGXv.AQ40blO7s48JYUOeQon6RgqVYHIEhIpAS.nZ3q]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [6] - [APPLICANT]
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Done materializing entityInstance : com.bank.mortgage.domain.User(22)#f8435946-ccbc-46e0-bc48-d386f69ae040
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results.loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@30cf61ca
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [0] - [9b276d66-2636-4d2c-ad25-c1de899bf040]
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Hydrated EntityKey (com.bank.mortgage.domain.User(22)): 9b276d66-2636-4d2c-ad25-c1de899bf040
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Created new entity instance [com.bank.mortgage.domain.User(22)#9b276d66-2636-4d2c-ad25-c1de899bf040] : 1639852645
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [1] - [2026-05-28T13:44:48.973212Z]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [2] - [officer@test.com]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [3] - [Test Officer]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [4] - [null]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [5] - [$2a$10$iYREdFObU79wP9eqhQCvMOqLfAhf.kcXPhxduvAszjK1mVsgnoZ2C]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [6] - [CREDIT_OFFICER]
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Done materializing entityInstance : com.bank.mortgage.domain.User(22)#9b276d66-2636-4d2c-ad25-c1de899bf040
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results.loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@30cf61ca
-[2026-05-28 16:44:49] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
-[2026-05-28 16:44:49] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(932073657<open>)]
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 2 deletions to 2 objects
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-28T13:44:48.860761Z, password=$2a$10$b1bWsuOAkBPGXv.AQ40blO7s48JYUOeQon6RgqVYHIEhIpAS.nZ3q, role=APPLICANT, nationalId=null, fullName=Test Applicant, id=f8435946-ccbc-46e0-bc48-d386f69ae040, email=applicant@test.com}
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-28T13:44:48.973212Z, password=$2a$10$iYREdFObU79wP9eqhQCvMOqLfAhf.kcXPhxduvAszjK1mVsgnoZ2C, role=CREDIT_OFFICER, nationalId=null, fullName=Test Officer, id=9b276d66-2636-4d2c-ad25-c1de899bf040, email=officer@test.com}
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [0] - [dd23a36c-a776-409d-ab14-164b00c31e42]
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Hydrated EntityKey (com.bank.mortgage.domain.User(22)): dd23a36c-a776-409d-ab14-164b00c31e42
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Created new entity instance [com.bank.mortgage.domain.User(22)#dd23a36c-a776-409d-ab14-164b00c31e42] : 1450419757
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [1] - [2026-05-29T13:10:28.021704Z]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [2] - [applicant@test.com]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [3] - [Test Applicant]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [4] - [null]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [5] - [$2a$10$sVyBbRL9yCYU07wyvr.MqeimEiU0.KzFl8PGnXaivMyGZGdQMpYUC]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [6] - [APPLICANT]
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Done materializing entityInstance : com.bank.mortgage.domain.User(22)#dd23a36c-a776-409d-ab14-164b00c31e42
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results.loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@4259588
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [0] - [6054dfdc-1d58-4a75-9890-738d2cabbb77]
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Hydrated EntityKey (com.bank.mortgage.domain.User(22)): 6054dfdc-1d58-4a75-9890-738d2cabbb77
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Created new entity instance [com.bank.mortgage.domain.User(22)#6054dfdc-1d58-4a75-9890-738d2cabbb77] : 1046162528
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [1] - [2026-05-29T13:10:28.120125Z]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [2] - [officer@test.com]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [3] - [Test Officer]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [4] - [null]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [5] - [$2a$10$xrWoY/CeNBkQZqESDoHCaOel98X9oDtq2s2Ytzt0qb2ymLQFVvXpq]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [6] - [CREDIT_OFFICER]
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Done materializing entityInstance : com.bank.mortgage.domain.User(22)#6054dfdc-1d58-4a75-9890-738d2cabbb77
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results.loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@4259588
+[2026-05-29 16:10:28] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+[2026-05-29 16:10:28] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(448889461<open>)]
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 2 deletions to 2 objects
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-29T13:10:28.021704Z, password=$2a$10$sVyBbRL9yCYU07wyvr.MqeimEiU0.KzFl8PGnXaivMyGZGdQMpYUC, role=APPLICANT, nationalId=null, fullName=Test Applicant, id=dd23a36c-a776-409d-ab14-164b00c31e42, email=applicant@test.com}
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-29T13:10:28.120125Z, password=$2a$10$xrWoY/CeNBkQZqESDoHCaOel98X9oDtq2s2Ytzt0qb2ymLQFVvXpq, role=CREDIT_OFFICER, nationalId=null, fullName=Test Officer, id=6054dfdc-1d58-4a75-9890-738d2cabbb77, email=officer@test.com}
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     delete 
     from
         users 
@@ -251,7 +251,7 @@ Hibernate:
         users 
     where
         id=?
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     delete 
     from
         users 
@@ -263,24 +263,24 @@ Hibernate:
         users 
     where
         id=?
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(932073657<open>)] after transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1452351559<open>)] for JPA transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@32a8ce3]
-[2026-05-28 16:44:49] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Initializer list:
-	  com.bank.mortgage.domain.User -> EntityResultInitializer(com.bank.mortgage.domain.User)@576698629 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(448889461<open>)] after transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1907522291<open>)] for JPA transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@59a9fe18]
+[2026-05-29 16:10:28] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.bank.mortgage.domain.User -> EntityResultInitializer(com.bank.mortgage.domain.User)@1719182908 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -306,16 +306,16 @@ Hibernate:
         users u1_0 
     where
         u1_0.id=?
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1452351559<open>)]
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-28T13:44:49.176659366Z, password=$2a$10$5fj/V.diG40l2bMSzC1TY.zOiY6xkIOEgpR2ZO0hB2hHh5bFEW1X6, role=APPLICANT, nationalId=null, fullName=Test Applicant, id=7901bb8e-031b-49cc-9e93-7ae22d7ab3a5, email=applicant@test.com}
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1907522291<open>)]
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-29T13:10:28.302257549Z, password=$2a$10$SfkC5NtQ/X9YdIimIQw0n.BB9G4XwtdyUXhskJfdjOl3B03MGZ.Me, role=APPLICANT, nationalId=null, fullName=Test Applicant, id=09743976-eb99-4b45-aa12-add9a6455529, email=applicant@test.com}
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     insert 
     into
         users
@@ -329,24 +329,24 @@ Hibernate:
         (created_at, email, full_name, national_id, password, role, id) 
     values
         (?, ?, ?, ?, ?, ?, ?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1452351559<open>)] after transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1755140654<open>)] for JPA transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@24e0989e]
-[2026-05-28 16:44:49] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Initializer list:
-	  com.bank.mortgage.domain.User -> EntityResultInitializer(com.bank.mortgage.domain.User)@436003366 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1907522291<open>)] after transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(2020497195<open>)] for JPA transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@4b9102de]
+[2026-05-29 16:10:28] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.bank.mortgage.domain.User -> EntityResultInitializer(com.bank.mortgage.domain.User)@769681661 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -372,16 +372,16 @@ Hibernate:
         users u1_0 
     where
         u1_0.id=?
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1755140654<open>)]
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-28T13:44:49.281207275Z, password=$2a$10$llmu44RsImKdXJGNKVvEXu4F2tWyvHyY6GXJChfsTfZyGC61Qaiz6, role=CREDIT_OFFICER, nationalId=null, fullName=Test Officer, id=ae582ac6-a803-4f3c-993e-f69db8b639e1, email=officer@test.com}
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(2020497195<open>)]
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-29T13:10:28.407094322Z, password=$2a$10$5xqX117QLj97zpWdNDhoSubK4W6V7l1tG9DlNitQDYMrL/3hR1L92, role=CREDIT_OFFICER, nationalId=null, fullName=Test Officer, id=273840df-5fdc-4362-9248-ffedbe7d4a5f, email=officer@test.com}
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     insert 
     into
         users
@@ -395,58 +395,58 @@ Hibernate:
         (created_at, email, full_name, national_id, password, role, id) 
     values
         (?, ?, ?, ?, ?, ?, ?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1755140654<open>)] after transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 57, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/home
-[2026-05-28 16:44:49] [main] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-[2026-05-28 16:44:49] [main] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/home
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.w.s.TestDispatcherServlet - GET "/api/v1/home", parameters={}
-[2026-05-28 16:44:49] [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bank.mortgage.controller.HomeController#home()
-[2026-05-28 16:44:49] [main] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor - Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
-[2026-05-28 16:44:49] [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2026-05-28 16:44:49] [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{status=Running, message=Welcome to Mortgage Service API, version=1.0.0, h2-console=Available at /h2 (truncated)...]
-[2026-05-28 16:44:49] [main] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK
-[2026-05-28 16:44:49] [main] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['status']
-[2026-05-28 16:44:49] [main] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['message']
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 58, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 59, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 60, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 61, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 62, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 63, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 64, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [HomeEndpointTests], method [homeEndpointShouldBeAccessibleWithoutAuthentication], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(2020497195<open>)] after transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 57, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/home
+[2026-05-29 16:10:28] [main] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+[2026-05-29 16:10:28] [main] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/home
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.w.s.TestDispatcherServlet - GET "/api/v1/home", parameters={}
+[2026-05-29 16:10:28] [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.bank.mortgage.controller.HomeController#home()
+[2026-05-29 16:10:28] [main] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor - Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+[2026-05-29 16:10:28] [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2026-05-29 16:10:28] [main] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{status=Running, documentation=Available at /swagger-ui.html, h2-console=Available at /h2-console, v (truncated)...]
+[2026-05-29 16:10:28] [main] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK
+[2026-05-29 16:10:28] [main] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['status']
+[2026-05-29 16:10:28] [main] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['message']
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 58, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 59, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 60, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 61, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 62, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 63, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 64, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [HomeEndpointTests], method [homeEndpointShouldBeAccessibleWithoutAuthentication], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
 ]]></system-out>
   </testcase>
-  <testcase name="nonExistentEndpointShouldReturnNotFound" classname="com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests" time="0.318">
-    <system-out><![CDATA[[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 65, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 66, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 67, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 68, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 69, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [HomeEndpointTests], method [nonExistentEndpointShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 70, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 71, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(33614538<open>)] for JPA transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@29f68e88]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : a1_0
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.bank.mortgage.domain.Application(23))] with identifierForTableGroup [com.bank.mortgage.domain.Application] for NavigablePath [com.bank.mortgage.domain.Application] 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@12d432ea] with identifierForTableGroup [com.bank.mortgage.domain.Application.applicant] for NavigablePath [com.bank.mortgage.domain.Application.applicant] 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+  <testcase name="nonExistentEndpointShouldReturnNotFound" classname="com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests" time="0.299">
+    <system-out><![CDATA[[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 65, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 66, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 67, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 68, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 69, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [HomeEndpointTests], method [nonExistentEndpointShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 70, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 71, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1442291478<open>)] for JPA transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@51c69389]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : a1_0
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.bank.mortgage.domain.Application(23))] with identifierForTableGroup [com.bank.mortgage.domain.Application] for NavigablePath [com.bank.mortgage.domain.Application] 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@770dd7a4] with identifierForTableGroup [com.bank.mortgage.domain.Application.applicant] for NavigablePath [com.bank.mortgage.domain.Application.applicant] 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
  \-EntityResultImpl [com.bank.mortgage.domain.Application(23)]
  |  +-EntityDelayedFetchImpl [com.bank.mortgage.domain.Application(23).applicant]
  |  +-BasicFetch [com.bank.mortgage.domain.Application(23).createdAt]
@@ -458,7 +458,7 @@ Hibernate:
  |  +-BasicFetch [com.bank.mortgage.domain.Application(23).updatedAt]
  |  \-BasicFetch [com.bank.mortgage.domain.Application(23).version]
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
     SelectStatement {
       FromClause {
         StandardTableGroup (a1 : com.bank.mortgage.domain.Application(23)) {
@@ -471,12 +471,12 @@ Hibernate:
       }
     }
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Initializer list:
-	  com.bank.mortgage.domain.Application(23) -> EntityResultInitializer(com.bank.mortgage.domain.Application(23))@1040800678 (SingleTableEntityPersister(com.bank.mortgage.domain.Application))
-	  com.bank.mortgage.domain.Application(23).applicant -> EntityDelayedFetchInitializer(com.bank.mortgage.domain.Application(23).applicant)@142460969 (ToOneAttributeMapping(NavigableRole[com.bank.mortgage.domain.Application.applicant])@2141841267)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.bank.mortgage.domain.Application(23) -> EntityResultInitializer(com.bank.mortgage.domain.Application(23))@976007317 (SingleTableEntityPersister(com.bank.mortgage.domain.Application))
+	  com.bank.mortgage.domain.Application(23).applicant -> EntityDelayedFetchInitializer(com.bank.mortgage.domain.Application(23).applicant)@795739850 (ToOneAttributeMapping(NavigableRole[com.bank.mortgage.domain.Application.applicant])@299441970)
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     select
         a1_0.id,
         a1_0.applicant_id,
@@ -504,18 +504,18 @@ Hibernate:
         a1_0.version 
     from
         applications a1_0
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(33614538<open>)]
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(33614538<open>)] after transaction
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(516239959<open>)] for JPA transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@781f8d26]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : u1_0
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.bank.mortgage.domain.User(24))] with identifierForTableGroup [com.bank.mortgage.domain.User] for NavigablePath [com.bank.mortgage.domain.User] 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1442291478<open>)]
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1442291478<open>)] after transaction
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1701519711<open>)] for JPA transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@3a6c336e]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : u1_0
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.bank.mortgage.domain.User(24))] with identifierForTableGroup [com.bank.mortgage.domain.User] for NavigablePath [com.bank.mortgage.domain.User] 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
  \-EntityResultImpl [com.bank.mortgage.domain.User(24)]
  |  +-BasicFetch [com.bank.mortgage.domain.User(24).createdAt]
  |  +-BasicFetch [com.bank.mortgage.domain.User(24).email]
@@ -524,7 +524,7 @@ Hibernate:
  |  +-BasicFetch [com.bank.mortgage.domain.User(24).password]
  |  \-BasicFetch [com.bank.mortgage.domain.User(24).role]
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
     SelectStatement {
       FromClause {
         StandardTableGroup (u1 : com.bank.mortgage.domain.User(24)) {
@@ -533,11 +533,11 @@ Hibernate:
       }
     }
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Initializer list:
-	  com.bank.mortgage.domain.User(24) -> EntityResultInitializer(com.bank.mortgage.domain.User(24))@497519740 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.bank.mortgage.domain.User(24) -> EntityResultInitializer(com.bank.mortgage.domain.User(24))@1999968326 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -559,41 +559,41 @@ Hibernate:
         u1_0.role 
     from
         users u1_0
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [0] - [7901bb8e-031b-49cc-9e93-7ae22d7ab3a5]
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Hydrated EntityKey (com.bank.mortgage.domain.User(24)): 7901bb8e-031b-49cc-9e93-7ae22d7ab3a5
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Created new entity instance [com.bank.mortgage.domain.User(24)#7901bb8e-031b-49cc-9e93-7ae22d7ab3a5] : 117542036
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [1] - [2026-05-28T13:44:49.176659Z]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [2] - [applicant@test.com]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [3] - [Test Applicant]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [4] - [null]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [5] - [$2a$10$5fj/V.diG40l2bMSzC1TY.zOiY6xkIOEgpR2ZO0hB2hHh5bFEW1X6]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [6] - [APPLICANT]
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Done materializing entityInstance : com.bank.mortgage.domain.User(24)#7901bb8e-031b-49cc-9e93-7ae22d7ab3a5
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results.loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@26e42464
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [0] - [ae582ac6-a803-4f3c-993e-f69db8b639e1]
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Hydrated EntityKey (com.bank.mortgage.domain.User(24)): ae582ac6-a803-4f3c-993e-f69db8b639e1
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Created new entity instance [com.bank.mortgage.domain.User(24)#ae582ac6-a803-4f3c-993e-f69db8b639e1] : 844598208
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [1] - [2026-05-28T13:44:49.281207Z]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [2] - [officer@test.com]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [3] - [Test Officer]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [4] - [null]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [5] - [$2a$10$llmu44RsImKdXJGNKVvEXu4F2tWyvHyY6GXJChfsTfZyGC61Qaiz6]
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [6] - [CREDIT_OFFICER]
-[2026-05-28 16:44:49] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Done materializing entityInstance : com.bank.mortgage.domain.User(24)#ae582ac6-a803-4f3c-993e-f69db8b639e1
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results.loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@26e42464
-[2026-05-28 16:44:49] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
-[2026-05-28 16:44:49] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(516239959<open>)]
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 2 deletions to 2 objects
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-28T13:44:49.281207Z, password=$2a$10$llmu44RsImKdXJGNKVvEXu4F2tWyvHyY6GXJChfsTfZyGC61Qaiz6, role=CREDIT_OFFICER, nationalId=null, fullName=Test Officer, id=ae582ac6-a803-4f3c-993e-f69db8b639e1, email=officer@test.com}
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-28T13:44:49.176659Z, password=$2a$10$5fj/V.diG40l2bMSzC1TY.zOiY6xkIOEgpR2ZO0hB2hHh5bFEW1X6, role=APPLICANT, nationalId=null, fullName=Test Applicant, id=7901bb8e-031b-49cc-9e93-7ae22d7ab3a5, email=applicant@test.com}
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [0] - [09743976-eb99-4b45-aa12-add9a6455529]
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Hydrated EntityKey (com.bank.mortgage.domain.User(24)): 09743976-eb99-4b45-aa12-add9a6455529
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Created new entity instance [com.bank.mortgage.domain.User(24)#09743976-eb99-4b45-aa12-add9a6455529] : 1527184948
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [1] - [2026-05-29T13:10:28.302258Z]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [2] - [applicant@test.com]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [3] - [Test Applicant]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [4] - [null]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [5] - [$2a$10$SfkC5NtQ/X9YdIimIQw0n.BB9G4XwtdyUXhskJfdjOl3B03MGZ.Me]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [6] - [APPLICANT]
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Done materializing entityInstance : com.bank.mortgage.domain.User(24)#09743976-eb99-4b45-aa12-add9a6455529
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results.loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@42e3a3a
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [0] - [273840df-5fdc-4362-9248-ffedbe7d4a5f]
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Hydrated EntityKey (com.bank.mortgage.domain.User(24)): 273840df-5fdc-4362-9248-ffedbe7d4a5f
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Created new entity instance [com.bank.mortgage.domain.User(24)#273840df-5fdc-4362-9248-ffedbe7d4a5f] : 1684602004
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [1] - [2026-05-29T13:10:28.407094Z]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [2] - [officer@test.com]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [3] - [Test Officer]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [4] - [null]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [5] - [$2a$10$5xqX117QLj97zpWdNDhoSubK4W6V7l1tG9DlNitQDYMrL/3hR1L92]
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Extracted JDBC value [6] - [CREDIT_OFFICER]
+[2026-05-29 16:10:28] [main] DEBUG o.h.orm.results.loading.entity - (EntityResultInitializer) Done materializing entityInstance : com.bank.mortgage.domain.User(24)#273840df-5fdc-4362-9248-ffedbe7d4a5f
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results.loading - Calling top-level assembler (0 / 1) : org.hibernate.sql.results.graph.entity.internal.EntityAssembler@42e3a3a
+[2026-05-29 16:10:28] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+[2026-05-29 16:10:28] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1701519711<open>)]
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 2 deletions to 2 objects
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-29T13:10:28.302258Z, password=$2a$10$SfkC5NtQ/X9YdIimIQw0n.BB9G4XwtdyUXhskJfdjOl3B03MGZ.Me, role=APPLICANT, nationalId=null, fullName=Test Applicant, id=09743976-eb99-4b45-aa12-add9a6455529, email=applicant@test.com}
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-29T13:10:28.407094Z, password=$2a$10$5xqX117QLj97zpWdNDhoSubK4W6V7l1tG9DlNitQDYMrL/3hR1L92, role=CREDIT_OFFICER, nationalId=null, fullName=Test Officer, id=273840df-5fdc-4362-9248-ffedbe7d4a5f, email=officer@test.com}
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     delete 
     from
         users 
@@ -605,7 +605,7 @@ Hibernate:
         users 
     where
         id=?
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     delete 
     from
         users 
@@ -617,24 +617,24 @@ Hibernate:
         users 
     where
         id=?
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(516239959<open>)] after transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(596681093<open>)] for JPA transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@37aedfcc]
-[2026-05-28 16:44:49] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Initializer list:
-	  com.bank.mortgage.domain.User -> EntityResultInitializer(com.bank.mortgage.domain.User)@896498801 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1701519711<open>)] after transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : delete from users where id=?
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1291168534<open>)] for JPA transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@1802c350]
+[2026-05-29 16:10:28] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.bank.mortgage.domain.User -> EntityResultInitializer(com.bank.mortgage.domain.User)@905776613 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -660,16 +660,16 @@ Hibernate:
         users u1_0 
     where
         u1_0.id=?
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(596681093<open>)]
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-28T13:44:49.493232415Z, password=$2a$10$40WJLdbZaZ56PB/Zsa9VDOaQf060rCgitcbSru8BJLdtoGjkEccJ., role=APPLICANT, nationalId=null, fullName=Test Applicant, id=92e6da1d-01ee-49a3-8ab9-dc80f72376b4, email=applicant@test.com}
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1291168534<open>)]
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-29T13:10:28.589103498Z, password=$2a$10$r/6uuqiFEgCVkwIWz1g9veSXBftfJTOmrcapbMFphIvxiD8RmGNbq, role=APPLICANT, nationalId=null, fullName=Test Applicant, id=d2ef40f7-d93b-43b3-b420-fe68649245ff, email=applicant@test.com}
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     insert 
     into
         users
@@ -683,24 +683,24 @@ Hibernate:
         (created_at, email, full_name, national_id, password, role, id) 
     values
         (?, ?, ?, ?, ?, ?, ?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(596681093<open>)] after transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1709848929<open>)] for JPA transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@1781e2e1]
-[2026-05-28 16:44:49] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.results - Initializer list:
-	  com.bank.mortgage.domain.User -> EntityResultInitializer(com.bank.mortgage.domain.User)@1405999852 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1291168534<open>)] after transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(2099269429<open>)] for JPA transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - begin
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@7b6c94e2]
+[2026-05-29 16:10:28] [main] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.bank.mortgage.domain.User -> EntityResultInitializer(com.bank.mortgage.domain.User)@1989170146 (SingleTableEntityPersister(com.bank.mortgage.domain.User))
 
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -726,16 +726,16 @@ Hibernate:
         users u1_0 
     where
         u1_0.id=?
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1709848929<open>)]
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
-[2026-05-28 16:44:49] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-28T13:44:49.602474083Z, password=$2a$10$gixEBGTlSnYiTWH8juh89uLLQiKcpbvhlRY4eijdNgilm0JAQeIAq, role=CREDIT_OFFICER, nationalId=null, fullName=Test Officer, id=12fe3ee1-ada7-48e8-8b6e-52d53e2368c2, email=officer@test.com}
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.SQL - 
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(2099269429<open>)]
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.t.internal.TransactionImpl - committing
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+[2026-05-29 16:10:28] [main] DEBUG o.h.internal.util.EntityPrinter - com.bank.mortgage.domain.User{createdAt=2026-05-29T13:10:28.695430118Z, password=$2a$10$6hG1zRAW3TXFIM.1H5vpTeBCi9mm1c92WnV4f0LEcvzmhesEpbhci, role=CREDIT_OFFICER, nationalId=null, fullName=Test Officer, id=9afa9139-c089-47c7-889c-5b18249a35eb, email=officer@test.com}
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.SQL - 
     insert 
     into
         users
@@ -749,38 +749,35 @@ Hibernate:
         (created_at, email, full_name, national_id, password, role, id) 
     values
         (?, ?, ?, ?, ?, ?, ?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1709848929<open>)] after transaction
-[2026-05-28 16:44:49] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 72, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.test.util.ReflectionTestUtils - Invoking method 'getFilters' on target object [FilterChainProxy[Filter Chains: null]] or target class [null] with arguments {org.springframework.mock.web.MockHttpServletRequest@192c3be0}
-[2026-05-28 16:44:49] [main] DEBUG o.s.test.util.ReflectionTestUtils - Invoking method 'getFilters' on target object [FilterChainProxy[Filter Chains: null]] or target class [null] with arguments {org.springframework.mock.web.MockHttpServletRequest@192c3be0}
-[2026-05-28 16:44:49] [main] DEBUG o.s.test.util.ReflectionTestUtils - Getting field 'securityContextRepository' from target object [org.springframework.security.web.context.SecurityContextHolderFilter@4cde5d66] or target class [class org.springframework.security.web.context.SecurityContextHolderFilter]
-[2026-05-28 16:44:49] [main] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/unknown
-[2026-05-28 16:44:49] [main] DEBUG c.b.m.s.JwtAuthenticationFilter - Processing request to: /api/v1/unknown
-[2026-05-28 16:44:49] [main] DEBUG c.b.m.s.JwtAuthenticationFilter - Authorization header: null
-[2026-05-28 16:44:49] [main] DEBUG c.b.m.s.JwtAuthenticationFilter - Token extracted: null
-[2026-05-28 16:44:49] [main] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/unknown
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.w.s.TestDispatcherServlet - GET "/api/v1/unknown", parameters={}
-[2026-05-28 16:44:49] [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-[2026-05-28 16:44:49] [main] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor - Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
-[2026-05-28 16:44:49] [main] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
-[2026-05-28 16:44:49] [main] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/unknown.]
-[2026-05-28 16:44:49] [main] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 404 NOT_FOUND
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 73, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 74, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 75, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 76, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 77, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 78, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@72e950ef size = 1, maxSize = 32, parentContextCount = 0, hitCount = 79, missCount = 1, failureCount = 0]
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [HomeEndpointTests], method [nonExistentEndpointShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
-[2026-05-28 16:44:49] [main] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(2099269429<open>)] after transaction
+[2026-05-29 16:10:28] [main] DEBUG o.h.e.j.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG org.hibernate.orm.jdbc.batch - PreparedStatementDetails did not contain PreparedStatement on #releaseStatements : insert into users (created_at,email,full_name,national_id,password,role,id) values (?,?,?,?,?,?,?)
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 72, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.test.util.ReflectionTestUtils - Invoking method 'getFilters' on target object [FilterChainProxy[Filter Chains: null]] or target class [null] with arguments {org.springframework.mock.web.MockHttpServletRequest@7c4ad4cc}
+[2026-05-29 16:10:28] [main] DEBUG o.s.test.util.ReflectionTestUtils - Invoking method 'getFilters' on target object [FilterChainProxy[Filter Chains: null]] or target class [null] with arguments {org.springframework.mock.web.MockHttpServletRequest@7c4ad4cc}
+[2026-05-29 16:10:28] [main] DEBUG o.s.test.util.ReflectionTestUtils - Getting field 'securityContextRepository' from target object [org.springframework.security.web.context.SecurityContextHolderFilter@3aa6a6d8] or target class [class org.springframework.security.web.context.SecurityContextHolderFilter]
+[2026-05-29 16:10:28] [main] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/unknown
+[2026-05-29 16:10:28] [main] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/unknown
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.w.s.TestDispatcherServlet - GET "/api/v1/unknown", parameters={}
+[2026-05-29 16:10:28] [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2026-05-29 16:10:28] [main] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor - Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+[2026-05-29 16:10:28] [main] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+[2026-05-29 16:10:28] [main] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/unknown.]
+[2026-05-29 16:10:28] [main] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 404 NOT_FOUND
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 73, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 74, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 75, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 76, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 77, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 78, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@2ff70947 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 79, missCount = 1, failureCount = 0]
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [HomeEndpointTests], method [nonExistentEndpointShouldReturnNotFound], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+[2026-05-29 16:10:28] [main] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.bank.mortgage.controller.ApplicationControllerIntegrationTest$HomeEndpointTests
 ]]></system-out>
   </testcase>
 </testsuite>

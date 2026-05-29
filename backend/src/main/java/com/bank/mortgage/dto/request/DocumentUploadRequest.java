@@ -8,9 +8,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class DocumentUploadRequest {
 
     @NotBlank(message = "File name is required")

@@ -200,7 +200,6 @@ class DocumentServiceImplTest {
 
         when(applicationRepository.findById(applicationId)).thenReturn(Optional.of(application));
         when(securityUtil.isApplicant()).thenReturn(false);
-        //when(securityUtil.getCurrentUser()).thenReturn(creditOfficer);
         when(s3Generator.generatePresignedUrl(anyString(), anyString(), anyInt()))
                 .thenReturn("https://s3.amazonaws.com/presigned");
 
