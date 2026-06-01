@@ -1,7 +1,7 @@
 # Mortgage Application Microservice Starter
 
 A production-ready Spring Boot microservice for processing mortgage loan applications with Kafka event streaming, PostgreSQL persistence, and JWT security.
-
+[![codecov](https://codecov.io/gh/EUGINE3/mortgage-service/branch/main/graph/badge.svg)](https://codecov.io/gh/EUGINE3/mortgage-service)
 ## Features
 
 - **Spring Boot 3.3.5** with Java 21
