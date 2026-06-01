@@ -29,10 +29,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
 <span class="fc" id="L30">        String token = extractToken(request);</span>
 
-<span class="pc bpc" id="L32" title="3 of 4 branches missed.">        if (token != null &amp;&amp; jwtUtil.validateToken(token)) {</span>
-<span class="nc" id="L33">            Authentication authentication = jwtUtil.getAuthentication(token);</span>
-<span class="nc" id="L34">            SecurityContextHolder.getContext().setAuthentication(authentication);</span>
-<span class="nc" id="L35">            log.info(&quot;JWT token validated for user: {}&quot;, authentication.getName());</span>
+<span class="fc bfc" id="L32" title="All 4 branches covered.">        if (token != null &amp;&amp; jwtUtil.validateToken(token)) {</span>
+<span class="fc" id="L33">            Authentication authentication = jwtUtil.getAuthentication(token);</span>
+<span class="fc" id="L34">            SecurityContextHolder.getContext().setAuthentication(authentication);</span>
+<span class="fc" id="L35">            log.info(&quot;JWT token validated for user: {}&quot;, authentication.getName());</span>
         }
 
 <span class="fc" id="L38">        filterChain.doFilter(request, response);</span>
@@ -40,8 +40,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private String extractToken(HttpServletRequest request) {
 <span class="fc" id="L42">        String bearerToken = request.getHeader(&quot;Authorization&quot;);</span>
-<span class="pc bpc" id="L43" title="3 of 4 branches missed.">        if (bearerToken != null &amp;&amp; bearerToken.startsWith(&quot;Bearer &quot;)) {</span>
-<span class="nc" id="L44">            return bearerToken.substring(7);</span>
+<span class="fc bfc" id="L43" title="All 4 branches covered.">        if (bearerToken != null &amp;&amp; bearerToken.startsWith(&quot;Bearer &quot;)) {</span>
+<span class="fc" id="L44">            return bearerToken.substring(7);</span>
         }
 <span class="fc" id="L46">        return null;</span>
     }

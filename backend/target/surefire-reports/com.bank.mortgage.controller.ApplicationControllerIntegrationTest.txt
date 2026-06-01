@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.bank.mortgage.controller.ApplicationControllerIntegrationTest
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 33.91 s -- in com.bank.mortgage.controller.ApplicationControllerIntegrationTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.82 s -- in com.bank.mortgage.controller.ApplicationControllerIntegrationTest

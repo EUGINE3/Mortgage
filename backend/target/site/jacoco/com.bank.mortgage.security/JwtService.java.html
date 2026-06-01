@@ -15,13 +15,13 @@ import java.util.Date;
     private String jwtSecret;
 
     public String generateToken(User user) {
-<span class="nc" id="L18">        return Jwts.builder()</span>
-<span class="nc" id="L19">                .subject(user.getEmail())</span>
-<span class="nc" id="L20">                .claim(&quot;role&quot;, user.getRole())</span>
-<span class="nc" id="L21">                .issuedAt(new Date())</span>
-<span class="nc" id="L22">                .expiration(new Date(System.currentTimeMillis() + 3600000))</span>
-<span class="nc" id="L23">                .signWith(Keys.hmacShaKeyFor(jwtSecret.getBytes()))</span>
-<span class="nc" id="L24">                .compact();</span>
+<span class="fc" id="L18">        return Jwts.builder()</span>
+<span class="fc" id="L19">                .subject(user.getEmail())</span>
+<span class="fc" id="L20">                .claim(&quot;role&quot;, user.getRole())</span>
+<span class="fc" id="L21">                .issuedAt(new Date())</span>
+<span class="fc" id="L22">                .expiration(new Date(System.currentTimeMillis() + 3600000))</span>
+<span class="fc" id="L23">                .signWith(Keys.hmacShaKeyFor(jwtSecret.getBytes()))</span>
+<span class="fc" id="L24">                .compact();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

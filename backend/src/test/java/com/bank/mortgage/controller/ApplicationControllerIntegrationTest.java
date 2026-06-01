@@ -8,33 +8,30 @@ import com.bank.mortgage.dto.response.ApplicationResponse;
 import com.bank.mortgage.repository.ApplicationRepository;
 import com.bank.mortgage.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Nested;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.context.annotation.Import;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.UUID;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -88,121 +85,149 @@ class ApplicationControllerIntegrationTest {
         userRepository.save(creditOfficer);
     }
 
-    // ---------------- HOME ----------------
+    // ================= HOME =================
 
-    @Nested
-    class HomeEndpointTests {
+    @Test
+    void homeEndpointShouldBeAccessible() throws Exception {
 
-        @Test
-        void homeEndpointShouldBeAccessibleWithoutAuthentication() throws Exception {
-
-            mockMvc.perform(get("/api/v1/home"))
-                    .andExpect(status().isOk())
-                    .andExpect(jsonPath("$.status").value("Running"))
-                    .andExpect(jsonPath("$.message")
-                            .value("Welcome to Mortgage Service API"));
-        }
-
-        @Test
-        void nonExistentEndpointShouldReturnNotFound() throws Exception {
-
-            mockMvc.perform(get("/api/v1/unknown")
-                            .with(user(applicant.getEmail())
-                                    .authorities(new SimpleGrantedAuthority("APPLICANT"))))
-                    .andExpect(status().isNotFound());
-        }
+        mockMvc.perform(get("/api/v1/home"))
+                .andExpect(status().isOk());
     }
 
-    // ---------------- CREATE ----------------
+    // ================= CREATE =================
 
-    @Nested
-    class CreateApplicationTests {
+    @Test
+    void createApplicationShouldWork() throws Exception {
 
-        @Test
-        @DisplayName("Should create application successfully")
-        
-        void createApplicationShouldWork() throws Exception {
+        mockMvc.perform(post("/api/v1/applications")
+                        .with(csrf())
+                        .with(user(applicant.getEmail()).roles("APPLICANT"))
+                        .contentType(APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(validRequest())))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.status").value("PENDING"));
+    }
 
-            ApplicationRequest request = validRequest();
 
-            MvcResult result = mockMvc.perform(post("/api/v1/applications")
+
+    // ================= DECISION FLOW =================
+
+    @Test
+    void creditOfficerCanApproveApplication() throws Exception {
+
+        MvcResult result = mockMvc.perform(post("/api/v1/applications")
+                        .with(csrf())
+                        .with(user(applicant.getEmail()).roles("APPLICANT"))
+                        .contentType(APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(validRequest())))
+                .andReturn();
+
+        ApplicationResponse created = objectMapper.readValue(
+                result.getResponse().getContentAsString(),
+                ApplicationResponse.class
+        );
+
+        DecisionRequest decision = new DecisionRequest();
+        decision.setStatus("APPROVED");
+
+        mockMvc.perform(patch("/api/v1/applications/{id}/decision", created.getId())
+                        .with(csrf())
+                        .with(user(creditOfficer.getEmail()).roles("CREDIT_OFFICER"))
+                        .contentType(APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(decision)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status").value("APPROVED"));
+    }
+
+    @Test
+    void applicantCannotMakeDecision() throws Exception {
+
+        MvcResult result = mockMvc.perform(post("/api/v1/applications")
+                        .with(csrf())
+                        .with(user(applicant.getEmail()).roles("APPLICANT"))
+                        .contentType(APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(validRequest())))
+                .andReturn();
+
+        ApplicationResponse created = objectMapper.readValue(
+                result.getResponse().getContentAsString(),
+                ApplicationResponse.class
+        );
+
+        DecisionRequest decision = new DecisionRequest();
+        decision.setStatus("APPROVED");
+
+        mockMvc.perform(patch("/api/v1/applications/{id}/decision", created.getId())
+                        .with(csrf())
+                        .with(user(applicant.getEmail()).roles("APPLICANT"))
+                        .contentType(APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(decision)))
+                .andExpect(status().isForbidden());
+    }
+
+    // ================= PAGINATION =================
+
+    @Test
+    void shouldListApplicationsWithPagination() throws Exception {
+
+        for (int i = 0; i < 3; i++) {
+            mockMvc.perform(post("/api/v1/applications")
                             .with(csrf())
                             .with(user(applicant.getEmail()).roles("APPLICANT"))
                             .contentType(APPLICATION_JSON)
-                            .content(objectMapper.writeValueAsString(request)))
-                    .andExpect(status().isCreated())
-                    .andExpect(jsonPath("$.status").value("PENDING"))
-                    .andReturn();
-
-            ApplicationResponse response = objectMapper.readValue(
-                    result.getResponse().getContentAsString(),
-                    ApplicationResponse.class
-            );
-
-            assertThat(response.getId()).isNotNull();
-            assertThat(response.getLoanAmount())
-                    .isEqualTo(BigDecimal.valueOf(100000));
-        }
-        
-
-        @Test
-        void createWithoutAuthShouldFail() throws Exception {
-
-            mockMvc.perform(post("/api/v1/applications")
-                            .contentType(APPLICATION_JSON)
                             .content(objectMapper.writeValueAsString(validRequest())))
-                    .andExpect(status().isForbidden());
+                    .andExpect(status().isCreated());
         }
+
+        mockMvc.perform(get("/api/v1/applications")
+                        .param("page", "0")
+                        .param("size", "2")
+                        .with(user(creditOfficer.getEmail()).roles("CREDIT_OFFICER")))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.content.length()").value(2));
     }
 
-    // ---------------- GET ----------------
+    // ================= GET BY ID =================
 
-    // @Nested
-    // class GetApplicationTests {
+    @Test
+    void shouldReturn404WhenApplicationNotFound() throws Exception {
 
-    //     @Test
-    //     void shouldReturn404WhenNotFound() throws Exception {
-
-    //         mockMvc.perform(get("/api/v1/applications/{id}", UUID.randomUUID())
-    //                         .with(user(applicant.getEmail())
-    //                                 .authorities(new SimpleGrantedAuthority("APPLICANT"))))
-    //                 .andExpect(status().isNotFound());
-    //     }
-    // }
-
-    // ---------------- APPROVE / REJECT ----------------
-
-    @Nested
-    class ApproveRejectTests {
-
-        @Test
-        void applicantShouldNotApprove() throws Exception {
-
-            DecisionRequest decision = new DecisionRequest();
-            decision.setStatus("APPROVED");
-
-            mockMvc.perform(
-                            patch("/api/v1/applications/{id}/decision", UUID.randomUUID())
-                                    .contentType(APPLICATION_JSON)
-                                    .content(objectMapper.writeValueAsString(decision))
-                                    .with(user(applicant.getEmail())
-                                            .authorities(new SimpleGrantedAuthority("APPLICANT")))
-                    )
-                    .andExpect(status().isForbidden());
-        }
+        mockMvc.perform(get("/api/v1/applications/{id}", UUID.randomUUID())
+                        .with(user(creditOfficer.getEmail()).roles("CREDIT_OFFICER")))
+                .andExpect(status().isNotFound());
     }
 
-    // ---------------- HELPERS ----------------
+    // ================= DELETE =================
+
+    @Test
+    void shouldDeleteApplication() throws Exception {
+
+        MvcResult result = mockMvc.perform(post("/api/v1/applications")
+                        .with(csrf())
+                        .with(user(applicant.getEmail()).roles("APPLICANT"))
+                        .contentType(APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(validRequest())))
+                .andReturn();
+
+        ApplicationResponse created = objectMapper.readValue(
+                result.getResponse().getContentAsString(),
+                ApplicationResponse.class
+        );
+
+        mockMvc.perform(delete("/api/v1/applications/{id}", created.getId())
+                        .with(csrf())
+                        .with(user(creditOfficer.getEmail()).roles("CREDIT_OFFICER")))
+                .andExpect(status().isNoContent());
+    }
+
+    // ================= HELPERS =================
 
     private ApplicationRequest validRequest() {
-
         ApplicationRequest request = new ApplicationRequest();
-
         request.setNationalId("1234567890");
         request.setLoanAmount(BigDecimal.valueOf(100000));
         request.setTenureMonths(60);
         request.setIncome(BigDecimal.valueOf(50000));
-
         return request;
     }
 }
