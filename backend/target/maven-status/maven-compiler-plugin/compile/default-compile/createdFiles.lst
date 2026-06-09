@@ -21,6 +21,7 @@ com/bank/mortgage/controller/HomeController.class
 com/bank/mortgage/events/KafkaEventPublisher.class
 com/bank/mortgage/service/DocumentService.class
 com/bank/mortgage/service/impl/ApplicationServiceImpl.class
+com/bank/mortgage/config/UserAwareCacheKeyGenerator.class
 com/bank/mortgage/dto/request/ApplicationRequest.class
 com/bank/mortgage/domain/Decision.class
 com/bank/mortgage/dto/response/DocumentResponse$DocumentResponseBuilder.class
@@ -31,6 +32,7 @@ com/bank/mortgage/controller/ApplicationController.class
 com/bank/mortgage/auth/AuthService.class
 com/bank/mortgage/config/RateLimitingInterceptor.class
 com/bank/mortgage/mapper/ApplicationMapperImpl.class
+com/bank/mortgage/config/CacheConfig.class
 com/bank/mortgage/dto/request/DecisionRequest.class
 com/bank/mortgage/dto/request/DocumentRequest.class
 com/bank/mortgage/config/SecurityConfig.class

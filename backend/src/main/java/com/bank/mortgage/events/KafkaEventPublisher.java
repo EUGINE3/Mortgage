@@ -5,9 +5,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.support.KafkaHeaders;
-import org.springframework.messaging.Message;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
@@ -22,7 +19,9 @@ import java.util.UUID;
 @Slf4j
 public class KafkaEventPublisher implements EventPublisher {
 
-    private final KafkaTemplate<String, Object> kafkaTemplate;
+    private static final String TOPIC = "loan.applications";
+
+    private final KafkaTemplate<String, ApplicationEvent> kafkaTemplate;
 
     private String getCorrelationId() {
         return UUID.randomUUID().toString();
@@ -41,15 +40,8 @@ public class KafkaEventPublisher implements EventPublisher {
                 getTraceId()
         );
 
-        Message<ApplicationEvent> message = MessageBuilder
-                .withPayload(event)
-                .setHeader("kafka_messageKey", application.getId().toString())
-                .setHeader("correlation_id", event.getCorrelationId())
-                .setHeader("trace_id", event.getTraceId())
-                .build();
-
-        kafkaTemplate.send("loan.applications", message);
-        log.info("Published application created event {} with correlationId {}", 
+        kafkaTemplate.send(TOPIC, application.getId().toString(), event);
+        log.info("Published application created event {} with correlationId {}",
                 application.getId(), event.getCorrelationId());
     }
 
@@ -62,15 +54,8 @@ public class KafkaEventPublisher implements EventPublisher {
                 getTraceId()
         );
 
-        Message<ApplicationEvent> message = MessageBuilder
-                .withPayload(event)
-                .setHeader("kafka_messageKey", application.getId().toString())
-                .setHeader("correlation_id", event.getCorrelationId())
-                .setHeader("trace_id", event.getTraceId())
-                .build();
-
-        kafkaTemplate.send("loan.applications", message);
-        log.info("Published application updated event {} with correlationId {}", 
+        kafkaTemplate.send(TOPIC, application.getId().toString(), event);
+        log.info("Published application updated event {} with correlationId {}",
                 application.getId(), event.getCorrelationId());
     }
 
@@ -85,15 +70,8 @@ public class KafkaEventPublisher implements EventPublisher {
                 .version("1.0")
                 .build();
 
-        Message<ApplicationEvent> message = MessageBuilder
-                .withPayload(event)
-                .setHeader("kafka_messageKey", applicationId)
-                .setHeader("correlation_id", event.getCorrelationId())
-                .setHeader("trace_id", event.getTraceId())
-                .build();
-
-        kafkaTemplate.send("loan.applications", message);
-        log.info("Published application deleted event {} with correlationId {}", 
+        kafkaTemplate.send(TOPIC, applicationId, event);
+        log.info("Published application deleted event {} with correlationId {}",
                 applicationId, event.getCorrelationId());
     }
 }

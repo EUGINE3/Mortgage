@@ -5,12 +5,14 @@
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/auth/dto/JwtResponse.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/auth/dto/LoginRequest.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/auth/dto/RegisterRequest.java
+/home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/config/CacheConfig.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/config/JacksonConfig.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/config/KafkaConditionalConfig.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/config/KafkaConfig.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/config/OpenApiConfig.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/config/RateLimitingInterceptor.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/config/SecurityConfig.java
+/home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/config/UserAwareCacheKeyGenerator.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/config/WebConfig.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/controller/ApplicationController.java
 /home/eugine/Downloads/mortgage-service-starter/backend/src/main/java/com/bank/mortgage/controller/HomeController.java

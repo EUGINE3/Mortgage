@@ -17,6 +17,6 @@ public class ApplicationRequest {
 
     @NotNull
     private Integer tenureMonths;
-
+    @NotNull
     private BigDecimal income;
 }

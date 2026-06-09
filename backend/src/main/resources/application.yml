@@ -27,6 +27,15 @@ spring:
     enabled: true
     locations: classpath:db/migration
 
+  data:
+    redis:
+      host: ${REDIS_HOST:redis}
+      port: ${REDIS_PORT:6379}
+      timeout: 2000ms
+
+  cache:
+    type: redis
+
   jackson:
     serialization:
       write-dates-as-timestamps: false
@@ -45,6 +54,10 @@ app:
   jwt:
     secret: ${JWT_SECRET:secret-key-for-jwt-token-signing-change-in-production}
     expiration-ms: 3600000
+  cache:
+    redis:
+      enabled: ${CACHE_REDIS_ENABLED:true}
+      ttl-minutes: ${CACHE_TTL_MINUTES:10}
 
 springdoc:
   api-docs:
