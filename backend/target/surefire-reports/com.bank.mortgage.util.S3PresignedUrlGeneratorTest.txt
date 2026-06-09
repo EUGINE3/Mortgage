@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.bank.mortgage.util.S3PresignedUrlGeneratorTest
--------------------------------------------------------------------------------
-Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.150 s -- in com.bank.mortgage.util.S3PresignedUrlGeneratorTest
