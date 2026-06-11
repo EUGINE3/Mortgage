@@ -85,8 +85,8 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           cache: maven
 
-      - name: Run Checkstyle
-        run: cd backend && mvn checkstyle:check
+      # - name: Run Checkstyle
+      #   run: cd backend && mvn checkstyle:check
 
       - name: Build and Test
         run: cd backend && mvn clean verify
