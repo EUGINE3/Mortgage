@@ -25,12 +25,6 @@ public class ApplicationEvent {
     @JsonProperty("applicant_id")
     private UUID applicantId;
 
-    @JsonProperty("applicant_email")
-    private String applicantEmail;
-
-    @JsonProperty("applicant_name")
-    private String applicantName;
-
     @JsonProperty("status")
     private String status;
 
@@ -63,8 +57,6 @@ public class ApplicationEvent {
                 .eventType(eventType)
                 .applicationId(app.getId())
                 .applicantId(app.getApplicant().getId())
-                .applicantEmail(app.getApplicant().getEmail())
-                .applicantName(app.getApplicant().getFullName())
                 .status(app.getStatus().name())
                 .loanAmount(app.getLoanAmount())
                 .nationalId(app.getNationalId())

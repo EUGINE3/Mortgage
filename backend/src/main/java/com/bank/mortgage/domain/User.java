@@ -6,8 +6,6 @@ import lombok.*;
 import java.time.Instant;
 import java.util.UUID;
 
-import com.bank.mortgage.domain.enums.UserRole;
-
 @Entity
 @Table(name = "users")
 @Getter
@@ -29,10 +27,6 @@ public class User {
 
     private String nationalId;
 
-    
-    //@Column(nullable = false)
-    //private UserRole role; // APPLICANT or CREDIT_OFFICER
-    
     private String role; // APPLICANT or CREDIT_OFFICER
 
     private Instant createdAt;

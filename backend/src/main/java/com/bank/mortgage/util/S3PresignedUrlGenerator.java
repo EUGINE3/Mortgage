@@ -35,34 +35,23 @@ public class S3PresignedUrlGenerator {
      * For now, returns a mock presigned URL with proper structure
      */
     public String generatePresignedUrl(String s3Key, String contentType, int expirationSeconds) {
-        // Add input validation
-        if (s3Key == null || s3Key.trim().isEmpty()) {
-            throw new IllegalArgumentException("S3 key cannot be null or empty");
-        }
-        if (contentType == null || contentType.trim().isEmpty()) {
-            throw new IllegalArgumentException("Content type cannot be null or empty");
-        }
-        
-        // Remove leading slash to prevent double slashes
-        String normalizedKey = s3Key.startsWith("/") ? s3Key.substring(1) : s3Key;
-        
         try {
-            long now = Instant.now().getEpochSecond(); // Use Instant for consistency
+            long now = System.currentTimeMillis() / 1000;
             long expiration = now + expirationSeconds;
 
             // Build the canonical request for AWS Signature Version 4
-            String canonicalRequest = buildCanonicalRequest(normalizedKey, contentType, expiration);
+            String canonicalRequest = buildCanonicalRequest(s3Key, contentType, expiration);
             
             // Sign the request
             String signature = signRequest(canonicalRequest);
 
-            // Build presigned URL - FIXED parameter order
-            String presignedUrl = buildPresignedUrl(normalizedKey, signature, now, expiration);
+            // Build presigned URL
+            String presignedUrl = buildPresignedUrl(s3Key, signature, now, expiration);
             
-            log.debug("Generated presigned URL for S3 key: {}", normalizedKey);
+            log.debug("Generated presigned URL for S3 key: {}", s3Key);
             return presignedUrl;
         } catch (Exception e) {
-            log.error("Error generating presigned URL for S3 key: {}", normalizedKey, e);
+            log.error("Error generating presigned URL for S3 key: {}", s3Key, e);
             throw new RuntimeException("Failed to generate presigned URL", e);
         }
     }
@@ -93,8 +82,6 @@ public class S3PresignedUrlGenerator {
     }
 
     private String buildPresignedUrl(String s3Key, String signature, long now, long expiration) {
-        // FIXED: The format string had %s and %d in wrong order
-        // X-Amz-Credential should come before X-Amz-Date
         return String.format(
             "%s/%s/%s?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=%s&" +
             "X-Amz-Date=%d&X-Amz-Expires=%d&X-Amz-Signature=%s&X-Amz-SignedHeaders=host",
@@ -103,11 +90,6 @@ public class S3PresignedUrlGenerator {
     }
 
     public String getS3Url(String s3Key) {
-        // Handle null and leading slashes
-        if (s3Key == null) {
-            return String.format("%s/%s/", endpoint, bucket);
-        }
-        String normalizedKey = s3Key.startsWith("/") ? s3Key.substring(1) : s3Key;
-        return String.format("%s/%s/%s", endpoint, bucket, normalizedKey);
+        return String.format("%s/%s/%s", endpoint, bucket, s3Key);
     }
 }

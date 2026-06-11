@@ -2,6 +2,23 @@ version: '3.8'
 
 services:
 
+  postgres:
+    image: postgres:16
+    container_name: mortgage-postgres
+    environment:
+      POSTGRES_DB: mortgage
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
     container_name: mortgage-zookeeper
@@ -21,27 +38,12 @@ services:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
-      # Single-broker local dev: RF must be 1 or Kafka cannot start internal topics.
-      # Production target RF=3 is documented in infra/kafka-topics.env and infra/README.md.
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
-      KAFKA_DEFAULT_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
     depends_on:
       - zookeeper
     healthcheck:
       test: ["CMD-SHELL", "kafka-topics --bootstrap-server localhost:9092 --list"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  redis:
-    image: redis:7-alpine
-    container_name: mortgage-redis
-    ports:
-      - "6379:6379"
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -66,39 +68,20 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_PROFILES_ACTIVE: h2
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:dev}
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      SPRING_DATA_REDIS_HOST: redis
-      CACHE_REDIS_ENABLED: "true"
     depends_on:
-      redis:
+      postgres:
         condition: service_healthy
       kafka:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/swagger-ui.html"]
-      interval: 15s
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 10s
       timeout: 5s
       retries: 5
-      start_period: 40s
 
-  notification-service:
-    build:
-      context: ../notification-service
-      dockerfile: Dockerfile
-    container_name: mortgage-notification-service
-    ports:
-      - "8081:8081"
-    environment:
-      SPRING_PROFILES_ACTIVE: h2
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      NOTIFICATION_EMAIL_ENABLED: "false"
-    depends_on:
-      kafka:
-        condition: service_healthy
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8081/actuator/health"]
-      interval: 15s
-      timeout: 5s
-      retries: 5
-      start_period: 40s
+volumes:
+  postgres_data:

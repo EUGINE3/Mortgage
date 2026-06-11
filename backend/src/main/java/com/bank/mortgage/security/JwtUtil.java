@@ -14,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.List;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 @Component
 @Slf4j
@@ -28,12 +29,6 @@ public class JwtUtil {
     }
 
     public boolean validateToken(String token) {
-        // Add null check first
-        if (token == null || token.trim().isEmpty()) {
-            log.error("Token is null or empty");
-            return false;
-        }
-        
         try {
             Jwts.parser()
                     .verifyWith(getSigningKey())
@@ -46,12 +41,10 @@ public class JwtUtil {
             log.error("Unsupported JWT token: {}", e.getMessage());
         } catch (MalformedJwtException e) {
             log.error("Malformed JWT token: {}", e.getMessage());
-        } catch (io.jsonwebtoken.security.SecurityException e) {
+        } catch (SecurityException e) {
             log.error("Invalid JWT signature: {}", e.getMessage());
         } catch (IllegalArgumentException e) {
             log.error("JWT claims string is empty: {}", e.getMessage());
-        } catch (Exception e) {
-            log.error("Unexpected error during JWT validation: {}", e.getMessage());
         }
         return false;
     }
@@ -67,12 +60,15 @@ public class JwtUtil {
         String role = claims.get("role", String.class);
 
         List<SimpleGrantedAuthority> authorities;
-        if (role != null && !role.trim().isEmpty()) {
+        if (role != null) {
             authorities = List.of(new SimpleGrantedAuthority("ROLE_" + role));
         } else {
             authorities = Collections.emptyList();
         }
+
+        // Extract roles from claims
         
         return new UsernamePasswordAuthenticationToken(username, null, authorities);
     }
+
 }

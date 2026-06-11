@@ -14,10 +14,7 @@ import com.bank.mortgage.mapper.ApplicationMapper;
 import com.bank.mortgage.repository.ApplicationRepository;
 import com.bank.mortgage.service.ApplicationService;
 import com.bank.mortgage.util.SecurityUtil;
-import com.bank.mortgage.config.CacheConfig;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -36,7 +33,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     private final SecurityUtil securityUtil;
 
     @Override
-    @CacheEvict(value = {CacheConfig.APPLICATION_BY_ID_CACHE, CacheConfig.APPLICATION_QUERIES_CACHE}, allEntries = true)
     public ApplicationResponse createApplication(ApplicationRequest request) {
         User applicant = securityUtil.getCurrentUser();
 
@@ -59,10 +55,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    @Cacheable(
-            value = CacheConfig.APPLICATION_BY_ID_CACHE,
-            keyGenerator = "userAwareCacheKeyGenerator"
-    )
     public ApplicationResponse getApplicationById(UUID id) {
         Application application = repository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Application not found with ID: " + id));
@@ -76,10 +68,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    @Cacheable(
-            value = CacheConfig.APPLICATION_QUERIES_CACHE,
-            keyGenerator = "userAwareCacheKeyGenerator"
-    )
     public PageResponse<ApplicationResponse> listApplications(Pageable pageable) {
         Page<Application> page;
         
@@ -96,10 +84,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    @Cacheable(
-            value = CacheConfig.APPLICATION_QUERIES_CACHE,
-            keyGenerator = "userAwareCacheKeyGenerator"
-    )
     public PageResponse<ApplicationResponse> filterByStatus(String status, Pageable pageable) {
         if (!securityUtil.isCreditOfficer()) {
             throw new UnauthorizedException("Only credit officers can filter by status");
@@ -111,10 +95,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    @Cacheable(
-            value = CacheConfig.APPLICATION_QUERIES_CACHE,
-            keyGenerator = "userAwareCacheKeyGenerator"
-    )
     public PageResponse<ApplicationResponse> filterByNationalId(String nationalId, Pageable pageable) {
         if (!securityUtil.isCreditOfficer()) {
             throw new UnauthorizedException("Only credit officers can filter by national ID");
@@ -125,10 +105,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    @Cacheable(
-            value = CacheConfig.APPLICATION_QUERIES_CACHE,
-            keyGenerator = "userAwareCacheKeyGenerator"
-    )
     public PageResponse<ApplicationResponse> filterByDateRange(Instant startDate, Instant endDate, Pageable pageable) {
         if (!securityUtil.isCreditOfficer()) {
             throw new UnauthorizedException("Only credit officers can filter by date range");
@@ -139,7 +115,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    @CacheEvict(value = {CacheConfig.APPLICATION_BY_ID_CACHE, CacheConfig.APPLICATION_QUERIES_CACHE}, allEntries = true)
     public ApplicationResponse updateApplication(UUID id, ApplicationRequest request) {
         Application application = repository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Application not found with ID: " + id));
@@ -164,7 +139,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    @CacheEvict(value = {CacheConfig.APPLICATION_BY_ID_CACHE, CacheConfig.APPLICATION_QUERIES_CACHE}, allEntries = true)
     public ApplicationResponse approveOrRejectApplication(UUID id, DecisionRequest request) {
         if (!securityUtil.isCreditOfficer()) {
             throw new UnauthorizedException("Only credit officers can approve or reject applications");
@@ -183,7 +157,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    @CacheEvict(value = {CacheConfig.APPLICATION_BY_ID_CACHE, CacheConfig.APPLICATION_QUERIES_CACHE}, allEntries = true)
     public void deleteApplication(UUID id) {
         Application application = repository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Application not found with ID: " + id));
