@@ -10,7 +10,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -24,12 +24,16 @@ spring:
       retries: 3
 
   flyway:
-    enabled: true
+    enabled: false
     locations: classpath:db/migration
 
   jackson:
     serialization:
       write-dates-as-timestamps: false
+
+  autoconfigure:
+    exclude:
+      - io.opentelemetry.instrumentation.spring.autoconfigure.OpenTelemetryAutoConfiguration
 
 server:
   port: 8080
@@ -45,7 +49,7 @@ logging:
 
 app:
   jwt:
-    secret: dev-secret-key-for-testing
+    secret: 9f2c7a1d6b8e4f3c9a0d8e7f6b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c
     expiration-ms: 3600000
 
 springdoc:
@@ -54,3 +58,7 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
+
+otel:
+  sdk:
+    disabled: true

@@ -1,5 +1,5 @@
 package com.bank.mortgage.config;
-
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import com.bank.mortgage.util.SecurityUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.interceptor.KeyGenerator;

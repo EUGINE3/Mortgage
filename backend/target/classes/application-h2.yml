@@ -27,6 +27,8 @@ spring:
     producer:
       acks: all
       retries: 3
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
   flyway:
     enabled: false
@@ -34,6 +36,10 @@ spring:
   jackson:
     serialization:
       write-dates-as-timestamps: false
+
+  autoconfigure:
+    exclude:
+      - io.opentelemetry.instrumentation.spring.autoconfigure.OpenTelemetryAutoConfiguration
 
 server:
   port: 8080
@@ -49,7 +55,7 @@ logging:
 
 app:
   jwt:
-    secret: test-secret-key-for-h2-testing
+    secret: 9f2c7a1d6b8e4f3c9a0d8e7f6b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c
     expiration-ms: 3600000
 
 springdoc:
