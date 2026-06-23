@@ -5,11 +5,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.support.KafkaHeaders;
-import org.springframework.messaging.Message;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
 import java.util.UUID;
 
 @Component
@@ -22,78 +20,69 @@ import java.util.UUID;
 @Slf4j
 public class KafkaEventPublisher implements EventPublisher {
 
+    private static final String TOPIC = "loan.applications";
+
     private final KafkaTemplate<String, Object> kafkaTemplate;
 
-    private String getCorrelationId() {
+    private String correlationId() {
         return UUID.randomUUID().toString();
     }
 
-    private String getTraceId() {
+    private String traceId() {
         return UUID.randomUUID().toString();
     }
 
     @Override
     public void publishApplicationCreated(Application application) {
+
         ApplicationEvent event = ApplicationEvent.fromApplication(
                 application,
                 "CREATE",
-                getCorrelationId(),
-                getTraceId()
+                correlationId(),
+                traceId()
         );
 
-        Message<ApplicationEvent> message = MessageBuilder
-                .withPayload(event)
-                .setHeader("kafka_messageKey", application.getId().toString())
-                .setHeader("correlation_id", event.getCorrelationId())
-                .setHeader("trace_id", event.getTraceId())
-                .build();
+        send(application.getId().toString(), event);
 
-        kafkaTemplate.send("loan.applications", message);
-        log.info("Published application created event {} with correlationId {}", 
-                application.getId(), event.getCorrelationId());
+        log.info("Published CREATE event for applicationId={}", application.getId());
     }
 
     @Override
     public void publishApplicationUpdated(Application application) {
+
         ApplicationEvent event = ApplicationEvent.fromApplication(
                 application,
                 "UPDATE",
-                getCorrelationId(),
-                getTraceId()
+                correlationId(),
+                traceId()
         );
 
-        Message<ApplicationEvent> message = MessageBuilder
-                .withPayload(event)
-                .setHeader("kafka_messageKey", application.getId().toString())
-                .setHeader("correlation_id", event.getCorrelationId())
-                .setHeader("trace_id", event.getTraceId())
-                .build();
+        send(application.getId().toString(), event);
 
-        kafkaTemplate.send("loan.applications", message);
-        log.info("Published application updated event {} with correlationId {}", 
-                application.getId(), event.getCorrelationId());
+        log.info("Published UPDATE event for applicationId={}", application.getId());
     }
 
     @Override
     public void publishApplicationDeleted(String applicationId) {
+
         ApplicationEvent event = ApplicationEvent.builder()
                 .eventType("DELETE")
                 .applicationId(UUID.fromString(applicationId))
-                .correlationId(getCorrelationId())
-                .traceId(getTraceId())
-                .timestamp(java.time.Instant.now())
+                .correlationId(correlationId())
+                .traceId(traceId())
+                .timestamp(Instant.now())
                 .version("1.0")
                 .build();
 
-        Message<ApplicationEvent> message = MessageBuilder
-                .withPayload(event)
-                .setHeader("kafka_messageKey", applicationId)
-                .setHeader("correlation_id", event.getCorrelationId())
-                .setHeader("trace_id", event.getTraceId())
-                .build();
+        send(applicationId, event);
 
-        kafkaTemplate.send("loan.applications", message);
-        log.info("Published application deleted event {} with correlationId {}", 
-                applicationId, event.getCorrelationId());
+        log.info("Published DELETE event for applicationId={}", applicationId);
+    }
+
+    /**
+     * SINGLE RESPONSIBILITY SEND METHOD
+     */
+    private void send(String key, ApplicationEvent event) {
+        kafkaTemplate.send(TOPIC, key, event);
     }
 }
