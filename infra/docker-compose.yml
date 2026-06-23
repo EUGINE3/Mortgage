@@ -1,12 +1,12 @@
-version: '3.8'
+version: "3.8"
 
 services:
 
   postgres:
-    image: postgres:16
+    image: postgres:14
     container_name: mortgage-postgres
     environment:
-      POSTGRES_DB: mortgage
+      POSTGRES_DB: mortgage_dev
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
@@ -18,6 +18,12 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
+  redis:
+    image: redis:7
+    container_name: mortgage-redis
+    ports:
+      - "6379:6379"
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
@@ -37,6 +43,7 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
@@ -64,24 +71,46 @@ services:
     build:
       context: ../backend
       dockerfile: Dockerfile
+
     container_name: mortgage-app
+
     ports:
       - "8080:8080"
+
     environment:
-      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:dev}
-      DB_USERNAME: postgres
-      DB_PASSWORD: postgres
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-dev1}
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_DEVTOOLS_RESTART_ENABLED: "true"
+      SPRING_DEVTOOLS_LIVERELOAD_ENABLED: "true"
+
+   
     depends_on:
-      postgres:
-        condition: service_healthy
       kafka:
-        condition: service_healthy
+        condition: service_started
+
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
-      interval: 10s
+      interval: 15s
       timeout: 5s
-      retries: 5
+      retries: 10
+
+  notification-service:
+    build:
+      context: ../notification-service
+      dockerfile: Dockerfile
+
+    container_name: mortgage-notification-service
+
+    ports:
+      - "8081:8080"
+
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-h2}
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+
+    depends_on:
+      kafka:
+        condition: service_started
 
 volumes:
   postgres_data:
