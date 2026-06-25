@@ -82,10 +82,14 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       SPRING_DEVTOOLS_RESTART_ENABLED: "true"
       SPRING_DEVTOOLS_LIVERELOAD_ENABLED: "true"
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
 
    
     depends_on:
       kafka:
+        condition: service_started
+      redis:
         condition: service_started
 
     healthcheck:

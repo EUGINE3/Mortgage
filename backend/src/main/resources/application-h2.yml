@@ -60,7 +60,7 @@ app:
     expiration-ms: 3600000
   cache:
     redis:
-      enabled: ${CACHE_REDIS_ENABLED:false}
+      enabled: ${CACHE_REDIS_ENABLED:true}
       ttl-minutes: ${CACHE_TTL_MINUTES:10}  
 
 springdoc:

@@ -1,6 +1,10 @@
 spring:
   application:
     name: mortgage-service
+  data:
+    redis:
+      host: ${REDIS_HOST:redis}
+      port: ${REDIS_PORT:6379}
 
     
   datasource:
