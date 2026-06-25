@@ -34,7 +34,7 @@ java -jar target/mortgage-service-1.0.0.jar --spring.profiles.active=h2
 
 Access API at `http://localhost:8080/swagger-ui.html`
 
-### Run with Docker Compose (PostgreSQL + Kafka)
+### Run with Docker Compose (H2 + Kafka cluster)
 
 ```bash
 cd infra
@@ -43,10 +43,12 @@ docker-compose up --build
 
 Services:
 - API: http://localhost:8080
+- Notification Service: http://localhost:8081
 - Swagger UI: http://localhost:8080/swagger-ui.html
-- PostgreSQL: localhost:5432
+- H2 Console: http://localhost:8080/h2-console (in-memory, no PostgreSQL required)
+- Redis: localhost:6379 (caches GET application endpoints)
 - Kafka: localhost:9092
-- Kafka UI: http://localhost:8080/kafka-ui
+- Kafka UI: http://localhost:8085
 
 ## Authentication Flow
 
@@ -146,6 +148,12 @@ DATABASE_PASSWORD=postgres
 KAFKA_BROKERS=localhost:9092
 KAFKA_ENABLED=true
 
+# Redis (GET endpoint cache)
+REDIS_HOST=localhost
+REDIS_PORT=6379
+CACHE_REDIS_ENABLED=true
+CACHE_TTL_MINUTES=10
+
 # Security
 JWT_SECRET=your-secret-key-min-32-chars
 CORS_ORIGINS=http://localhost:3000,http://localhost:4200
@@ -194,6 +202,8 @@ Events published to `loan.applications` topic:
   "event_type": "CREATE",
   "application_id": "550e8400-e29b-41d4-a716-446655440000",
   "applicant_id": "550e8400-e29b-41d4-a716-446655440001",
+  "applicant_email": "applicant@example.com",
+  "applicant_name": "John Applicant",
   "status": "PENDING",
   "loan_amount": 100000.00,
   "national_id": "NA123456",
@@ -206,6 +216,23 @@ Events published to `loan.applications` topic:
 
 **Event Types**: CREATE, UPDATE, DELETE
 **Headers**: correlation_id, trace_id for distributed tracing
+
+## Notification Service
+
+The `notification-service` consumes `loan.applications` events and sends applicant notifications (logged to console by default, or via SMTP when enabled).
+
+**Exactly-once processing** uses two idempotency layers:
+- **Kafka EOS** — `processed_events` keyed by `topic + partition + offset` (prevents re-processing after redelivery)
+- **Business** — `notification_logs` keyed by `application_id + event_type + correlation_id` (prevents duplicate notifications from republished events)
+
+Failed deliveries throw `NotificationDeliveryException` and roll back the DB transaction so retries work correctly. Exhausted retries go to `loan.applications.dlq`.
+
+```bash
+# View notification logs
+curl http://localhost:8081/api/v1/notifications
+```
+
+See `notification-service/README.md` for retry/DLQ configuration details.
 
 ## Document Attachments
 
@@ -270,12 +297,26 @@ View in `.github/workflows/ci-cd.yml`
 - CSRF: Disabled for REST APIs
 - SQL Injection: Parameterized queries via JPA
 
+## Redis Caching (GET Endpoints)
+
+Application read endpoints are cached in Redis with a **10-minute TTL** (configurable):
+
+| Endpoint | Cache |
+|----------|-------|
+| `GET /api/v1/applications` | `applicationQueries` |
+| `GET /api/v1/applications/{id}` | `applicationById` |
+| `GET /api/v1/applications/filter/*` | `applicationQueries` |
+
+Cache keys are scoped per authenticated user to preserve authorization. Create, update, delete, and decision operations evict all cached entries.
+
+Disable Redis caching locally with `CACHE_REDIS_ENABLED=false` (falls back to in-memory cache).
+
 ## Performance
 
 - Connection pooling: HikariCP (10 connections)
 - Database: B-tree indexes on frequently queried columns
 - Pagination: Default page size 20
-- Caching: Spring Data cache support
+- Caching: Redis-backed Spring Cache for GET endpoints
 - Async: Kafka event publishing (non-blocking)
 
 ## Troubleshooting
@@ -292,10 +333,28 @@ Password: (empty)
 ```bash
 # Tail application logs
 docker logs mortgage-app -f
-
-# View Kafka events
-docker logs kafka-ui -f
+docker logs mortgage-notification-service -f
 ```
+
+### Inspect Kafka
+```bash
+# List topics
+docker exec -it mortgage-kafka kafka-topics --list --bootstrap-server localhost:9092
+
+# View messages being sent
+docker exec -it mortgage-kafka kafka-console-consumer \
+  --bootstrap-server localhost:9092 \
+  --topic loan.applications \
+  --from-beginning
+
+# View failed notification messages (DLQ)
+docker exec -it mortgage-kafka kafka-console-consumer \
+  --bootstrap-server localhost:9092 \
+  --topic loan.applications.dlq \
+  --from-beginning
+```
+
+Kafka UI: http://localhost:8085
 
 ### Reset Database
 ```bash
@@ -326,6 +385,7 @@ docker-compose up --build
 ```
 mortgage-service/
 ├── backend/
+├── notification-service/          # Kafka consumer + notifications
 │   ├── src/
 │   │   ├── main/
 │   │   │   ├── java/com/bank/mortgage/
