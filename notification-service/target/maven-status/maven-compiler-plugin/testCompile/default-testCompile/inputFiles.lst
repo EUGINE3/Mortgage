@@ -1,1 +1,3 @@
+/home/eugine/Downloads/mortgage-service-starter/notification-service/src/test/java/com/bank/notification/channel/impl/EmailNotificationChannelTest.java
+/home/eugine/Downloads/mortgage-service-starter/notification-service/src/test/java/com/bank/notification/consumer/LoanApplicationEventConsumerTest.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/test/java/com/bank/notification/service/impl/NotificationServiceImplTest.java

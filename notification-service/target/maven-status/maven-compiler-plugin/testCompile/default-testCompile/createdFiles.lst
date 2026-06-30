@@ -1,1 +1,12 @@
+com/bank/notification/service/impl/NotificationServiceImplTest$Idempotency.class
+com/bank/notification/service/impl/NotificationServiceImplTest$Delivery.class
+com/bank/notification/service/impl/NotificationServiceImplTest$UnknownEventTypes.class
+com/bank/notification/consumer/LoanApplicationEventConsumerTest.class
+com/bank/notification/service/impl/NotificationServiceImplTest$AuditLogging.class
+com/bank/notification/service/impl/NotificationServiceImplTest$UpdateEvents.class
+com/bank/notification/channel/impl/EmailNotificationChannelTest.class
+com/bank/notification/service/impl/NotificationServiceImplTest$CreateEvents.class
+com/bank/notification/service/impl/NotificationServiceImplTest$InvalidEvents.class
+com/bank/notification/service/impl/NotificationServiceImplTest$ContentDefaults.class
+com/bank/notification/service/impl/NotificationServiceImplTest$DeleteEvents.class
 com/bank/notification/service/impl/NotificationServiceImplTest.class
