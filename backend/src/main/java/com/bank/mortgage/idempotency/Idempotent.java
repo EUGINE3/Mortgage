@@ -1,0 +1,15 @@
+package com.bank.mortgage.idempotency;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Idempotent {
+
+    String header() default "X-Idempotency-Key";
+
+    String ttl() default "PT24H";
+}

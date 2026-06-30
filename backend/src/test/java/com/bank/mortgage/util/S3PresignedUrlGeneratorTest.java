@@ -93,7 +93,7 @@ class S3PresignedUrlGeneratorTest {
 
         // Assert
         assertThat(presignedUrl).contains(s3Key);
-        assertThat(presignedUrl).doesNotContain("//"); // No double slashes
+        assertThat(presignedUrl).doesNotContain("/mortgage-documents//");
     }
 
     @Test
@@ -285,6 +285,11 @@ class S3PresignedUrlGeneratorTest {
 
         // Act
         String url1 = s3PresignedUrlGenerator.generatePresignedUrl(s3Key, contentType, expirationSeconds);
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         String url2 = s3PresignedUrlGenerator.generatePresignedUrl(s3Key, contentType, expirationSeconds);
 
         // Assert

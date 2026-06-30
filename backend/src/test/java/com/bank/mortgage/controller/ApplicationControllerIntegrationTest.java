@@ -32,7 +32,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("h2")
@@ -100,6 +99,7 @@ class ApplicationControllerIntegrationTest {
     void createApplicationShouldWork() throws Exception {
 
         mockMvc.perform(post("/api/v1/applications")
+                        .header("X-Idempotency-Key", UUID.randomUUID().toString())
                         .with(csrf())
                         .with(user(applicant.getEmail()).roles("APPLICANT"))
                         .contentType(APPLICATION_JSON)
@@ -110,12 +110,24 @@ class ApplicationControllerIntegrationTest {
 
 
 
+    @Test
+    void createApplicationWithoutIdempotencyKeyShouldReturnBadRequest() throws Exception {
+        mockMvc.perform(post("/api/v1/applications")
+                        .with(csrf())
+                        .with(user(applicant.getEmail()).roles("APPLICANT"))
+                        .contentType(APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(validRequest())))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errorCode").value("MISSING_IDEMPOTENCY_KEY"));
+    }
+
     // ================= DECISION FLOW =================
 
     @Test
     void creditOfficerCanApproveApplication() throws Exception {
 
         MvcResult result = mockMvc.perform(post("/api/v1/applications")
+                        .header("X-Idempotency-Key", UUID.randomUUID().toString())
                         .with(csrf())
                         .with(user(applicant.getEmail()).roles("APPLICANT"))
                         .contentType(APPLICATION_JSON)
@@ -143,6 +155,7 @@ class ApplicationControllerIntegrationTest {
     void applicantCannotMakeDecision() throws Exception {
 
         MvcResult result = mockMvc.perform(post("/api/v1/applications")
+                        .header("X-Idempotency-Key", UUID.randomUUID().toString())
                         .with(csrf())
                         .with(user(applicant.getEmail()).roles("APPLICANT"))
                         .contentType(APPLICATION_JSON)
@@ -172,6 +185,7 @@ class ApplicationControllerIntegrationTest {
 
         for (int i = 0; i < 3; i++) {
             mockMvc.perform(post("/api/v1/applications")
+                            .header("X-Idempotency-Key", UUID.randomUUID().toString())
                             .with(csrf())
                             .with(user(applicant.getEmail()).roles("APPLICANT"))
                             .contentType(APPLICATION_JSON)
@@ -203,6 +217,7 @@ class ApplicationControllerIntegrationTest {
     void shouldDeleteApplication() throws Exception {
 
         MvcResult result = mockMvc.perform(post("/api/v1/applications")
+                        .header("X-Idempotency-Key", UUID.randomUUID().toString())
                         .with(csrf())
                         .with(user(applicant.getEmail()).roles("APPLICANT"))
                         .contentType(APPLICATION_JSON)

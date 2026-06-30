@@ -1,4 +1,7 @@
+com/bank/mortgage/idempotency/IdempotencyAspectTest$TestService.class
+com/bank/mortgage/config/UserAwareCacheKeyGeneratorTest$SampleService.class
 com/bank/mortgage/security/CustomUserDetailsServiceTest.class
+com/bank/mortgage/idempotency/IdempotencyAspectTest.class
 com/bank/mortgage/service/impl/ApplicationServiceImplTest$GetApplicationTests.class
 com/bank/mortgage/service/impl/ApplicationServiceImplTest$CreateApplicationTests.class
 com/bank/mortgage/util/SecurityUtilTest.class
@@ -15,6 +18,7 @@ com/bank/mortgage/service/impl/ApplicationServiceImplTest$FilterByNationalIdTest
 com/bank/mortgage/service/impl/DecisionServiceImplTest.class
 com/bank/mortgage/service/impl/ApplicationServiceImplTest$ApproveRejectApplicationTests.class
 com/bank/mortgage/auth/AuthServiceImplTest.class
+com/bank/mortgage/util/TraceUtilTest.class
 com/bank/mortgage/service/impl/ApplicationServiceImplTest$UpdateApplicationTests.class
 com/bank/mortgage/mapper/DocumentMapperImplTest$ToResponseTests.class
 com/bank/mortgage/security/JwtAuthenticationFilterTest.class
@@ -23,14 +27,18 @@ com/bank/mortgage/config/TestConfig$1.class
 com/bank/mortgage/service/impl/ApplicationServiceImplTest.class
 com/bank/mortgage/security/JwtServiceTest.class
 com/bank/mortgage/mapper/DocumentMapperImplTest.class
+com/bank/mortgage/config/UserAwareCacheKeyGeneratorTest.class
 com/bank/mortgage/security/JwtServiceTest$GenerateTokenTests.class
+com/bank/mortgage/idempotency/IdempotencyServiceTest.class
 com/bank/mortgage/service/impl/ApplicationServiceImplTest$DeleteApplicationTests.class
+com/bank/mortgage/exception/GlobalExceptionHandlerTest.class
 com/bank/mortgage/security/JwtUtilTest.class
 com/bank/mortgage/security/JwtServiceTest$TokenSecurityTests.class
 com/bank/mortgage/service/impl/ApplicationServiceImplTest$ListApplicationsTests.class
 com/bank/mortgage/service/impl/ApplicationServiceImplTest$FilterByDateRangeTests.class
 com/bank/mortgage/mapper/DocumentMapperImplTest$DataTypeConversionTests.class
 com/bank/mortgage/util/S3PresignedUrlGeneratorTest.class
+com/bank/mortgage/config/CacheConfigTest.class
 com/bank/mortgage/security/JwtServiceTest$TokenClaimsTests.class
 com/bank/mortgage/security/JwtServiceTest$IntegrationLikeTests.class
 com/bank/mortgage/controller/ApplicationControllerIntegrationTest.class

@@ -3,6 +3,7 @@
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/channel/impl/EmailNotificationChannel.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/channel/impl/LoggingNotificationChannel.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/config/KafkaConsumerConfig.java
+/home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/config/KafkaObjectMapperConfig.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/consumer/DlqEventConsumer.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/consumer/LoanApplicationEventConsumer.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/controller/NotificationLogController.java
@@ -12,6 +13,7 @@
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/dto/ApplicationEvent.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/dto/KafkaEventMetadata.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/exception/NotificationDeliveryException.java
+/home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/logging/NotificationAuditLogger.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/repository/NotificationLogRepository.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/repository/ProcessedEventRepository.java
 /home/eugine/Downloads/mortgage-service-starter/notification-service/src/main/java/com/bank/notification/service/NotificationService.java

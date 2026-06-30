@@ -5,13 +5,11 @@ spring:
     redis:
       host: ${REDIS_HOST:redis}
       port: ${REDIS_PORT:6379}
-
-    
   datasource:
-    url: jdbc:h2:mem:mortgagedb
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:postgresql://postgres:5432/mortgage
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
 
    
 
@@ -64,6 +62,9 @@ app:
   jwt:
     secret: 9f2c7a1d6b8e4f3c9a0d8e7f6b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c
     expiration-ms: 3600000
+  idempotency:
+    enabled: true
+    lock-ttl-minutes: 2
 
 springdoc:
   api-docs:

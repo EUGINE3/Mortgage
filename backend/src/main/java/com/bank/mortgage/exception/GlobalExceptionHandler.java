@@ -47,4 +47,24 @@ public class GlobalExceptionHandler {
                 .detail(ex.getMessage())
                 .build();
     }
+
+    @ExceptionHandler(MissingIdempotencyKeyException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleMissingIdempotencyKey(MissingIdempotencyKeyException ex) {
+        return ErrorResponse.builder()
+                .timestamp(Instant.now())
+                .errorCode("MISSING_IDEMPOTENCY_KEY")
+                .detail(ex.getMessage())
+                .build();
+    }
+
+    @ExceptionHandler(IdempotencyInProgressException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponse handleIdempotencyInProgress(IdempotencyInProgressException ex) {
+        return ErrorResponse.builder()
+                .timestamp(Instant.now())
+                .errorCode("IDEMPOTENCY_IN_PROGRESS")
+                .detail(ex.getMessage())
+                .build();
+    }
 }

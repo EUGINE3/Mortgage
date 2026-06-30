@@ -3,8 +3,9 @@ spring:
     name: mortgage-service
 
     
+    
   datasource:
-    url: jdbc:h2:mem:mortgagedb
+    url: jdbc:h2:mem:mortgage;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     username: sa
     password:
     driver-class-name: org.h2.Driver
@@ -41,6 +42,11 @@ spring:
   autoconfigure:
     exclude:
       - io.opentelemetry.instrumentation.spring.autoconfigure.OpenTelemetryAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
+
+  cache:
+    type: simple
 
 server:
   port: 8080
@@ -60,8 +66,10 @@ app:
     expiration-ms: 3600000
   cache:
     redis:
-      enabled: ${CACHE_REDIS_ENABLED:true}
-      ttl-minutes: ${CACHE_TTL_MINUTES:10}  
+      enabled: false
+      ttl-minutes: ${CACHE_TTL_MINUTES:10}
+  idempotency:
+    enabled: false
 
 springdoc:
   api-docs:
@@ -72,7 +80,9 @@ springdoc:
 
 otel:
   sdk:
-    disabled: true 
- 
-    
+    disabled: true
+
+rate:
+  limiting:
+    enabled: false
 

@@ -41,7 +41,7 @@ public class JwtUtil {
             log.error("Unsupported JWT token: {}", e.getMessage());
         } catch (MalformedJwtException e) {
             log.error("Malformed JWT token: {}", e.getMessage());
-        } catch (SecurityException e) {
+        } catch (io.jsonwebtoken.security.SecurityException e) {
             log.error("Invalid JWT signature: {}", e.getMessage());
         } catch (IllegalArgumentException e) {
             log.error("JWT claims string is empty: {}", e.getMessage());

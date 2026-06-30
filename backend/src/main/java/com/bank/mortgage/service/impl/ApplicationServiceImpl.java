@@ -15,12 +15,14 @@ import com.bank.mortgage.repository.ApplicationRepository;
 import com.bank.mortgage.service.ApplicationService;
 import com.bank.mortgage.util.SecurityUtil;
 import com.bank.mortgage.config.CacheConfig;
+import com.bank.mortgage.idempotency.Idempotent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -36,6 +38,8 @@ public class ApplicationServiceImpl implements ApplicationService {
     private final SecurityUtil securityUtil;
 
     @Override
+    @Transactional
+    @Idempotent
     @CacheEvict(value = {CacheConfig.APPLICATION_BY_ID_CACHE, CacheConfig.APPLICATION_QUERIES_CACHE}, allEntries = true)
     public ApplicationResponse createApplication(ApplicationRequest request) {
         User applicant = securityUtil.getCurrentUser();

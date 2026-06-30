@@ -56,6 +56,8 @@ app:
   cache:
     redis:
       enabled: false
+  idempotency:
+    enabled: false
 
 
 # Disable rate limiting for tests

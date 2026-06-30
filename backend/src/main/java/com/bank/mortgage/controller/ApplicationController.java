@@ -4,6 +4,7 @@ import com.bank.mortgage.dto.request.ApplicationRequest;
 import com.bank.mortgage.dto.request.DecisionRequest;
 import com.bank.mortgage.dto.response.ApplicationResponse;
 import com.bank.mortgage.dto.response.PageResponse;
+import com.bank.mortgage.exception.MissingIdempotencyKeyException;
 import com.bank.mortgage.service.ApplicationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -38,10 +39,19 @@ public class ApplicationController {
 
     @PostMapping
     @PreAuthorize("hasRole('APPLICANT')")
-    @Operation(summary = "Create a new mortgage application")
+    @Operation(summary = "Create a new mortgage application",
+            description = "Requires X-Idempotency-Key header to safely retry duplicate submissions")
     @ApiResponse(responseCode = "201", description = "Application created successfully")
+    @ApiResponse(responseCode = "400", description = "Missing idempotency key")
     @ApiResponse(responseCode = "401", description = "Unauthorized")
-    public ResponseEntity<ApplicationResponse> createApplication(@RequestBody ApplicationRequest request) {
+    @ApiResponse(responseCode = "409", description = "Duplicate request still processing")
+    public ResponseEntity<ApplicationResponse> createApplication(
+            @Parameter(description = "Unique key for idempotent retries", required = true)
+            @RequestHeader(value = "X-Idempotency-Key", required = false) String idempotencyKey,
+            @RequestBody ApplicationRequest request) {
+        if (idempotencyKey == null || idempotencyKey.isBlank()) {
+            throw new MissingIdempotencyKeyException("X-Idempotency-Key");
+        }
         ApplicationResponse response = applicationService.createApplication(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

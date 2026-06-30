@@ -35,12 +35,18 @@ public class S3PresignedUrlGenerator {
      * For now, returns a mock presigned URL with proper structure
      */
     public String generatePresignedUrl(String s3Key, String contentType, int expirationSeconds) {
+        if (s3Key == null || s3Key.isBlank()) {
+            throw new RuntimeException("Failed to generate presigned URL");
+        }
+        if (contentType == null) {
+            throw new RuntimeException("Failed to generate presigned URL");
+        }
         try {
-            long now = System.currentTimeMillis() / 1000;
-            long expiration = now + expirationSeconds;
+            long now = System.currentTimeMillis();
+            long expiration = now + (expirationSeconds * 1000L);
 
             // Build the canonical request for AWS Signature Version 4
-            String canonicalRequest = buildCanonicalRequest(s3Key, contentType, expiration);
+            String canonicalRequest = buildCanonicalRequest(s3Key, contentType, now, expiration);
             
             // Sign the request
             String signature = signRequest(canonicalRequest);
@@ -64,12 +70,12 @@ public class S3PresignedUrlGenerator {
         // In production, this would use AWS SDK to delete from S3
     }
 
-    private String buildCanonicalRequest(String s3Key, String contentType, long expiration) {
+    private String buildCanonicalRequest(String s3Key, String contentType, long now, long expiration) {
         return String.format(
             "PUT\n/%s/%s\n\nhost:%s.s3.%s.amazonaws.com\n" +
-            "x-amz-content-sha256:UNSIGNED-PAYLOAD\nx-amz-date:%d\n\n" +
-            "host;x-amz-content-sha256;x-amz-date\nUNSIGNED-PAYLOAD",
-            bucket, s3Key, bucket, region, expiration
+            "x-amz-content-sha256:UNSIGNED-PAYLOAD\nx-amz-date:%d\nx-amz-expires:%d\n\n" +
+            "host;x-amz-content-sha256;x-amz-date;x-amz-expires\nUNSIGNED-PAYLOAD",
+            bucket, s3Key, bucket, region, now, expiration
         );
     }
 
@@ -82,10 +88,11 @@ public class S3PresignedUrlGenerator {
     }
 
     private String buildPresignedUrl(String s3Key, String signature, long now, long expiration) {
+        long expiresSeconds = (expiration - now) / 1000;
         return String.format(
             "%s/%s/%s?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=%s&" +
             "X-Amz-Date=%d&X-Amz-Expires=%d&X-Amz-Signature=%s&X-Amz-SignedHeaders=host",
-            endpoint, bucket, s3Key, accessKey, now, (expiration - now), signature
+            endpoint, bucket, s3Key, accessKey, now, expiresSeconds, signature
         );
     }
 

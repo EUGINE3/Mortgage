@@ -3,7 +3,7 @@ version: "3.8"
 services:
 
   postgres:
-    image: postgres:14
+    image: postgres:12
     container_name: mortgage-postgres
     environment:
       POSTGRES_DB: mortgage_dev
